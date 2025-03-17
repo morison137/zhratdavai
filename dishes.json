@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "name": "Борщ с говядиной",
+    "image": "https://raw.githubusercontent.com/morison137/zhratdavai/main/images/borch.jpg",
+    "category": "Супы"
+  },
+  {
+    "id": 2,
+    "name": "Пельмени",
+    "image": "https://raw.githubusercontent.com/morison137/zhratdavai/main/images/pelmeni.jpg",
+    "category": "Горячее"
+  }
+]
