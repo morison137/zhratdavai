@@ -9,1368 +9,1368 @@
     "id": 2,
     "name": "Поджарка из свинины с луком",
     "category": "Мясные блюда",
-    "image": "images/Поджарка из свинины с луком-720x960.jpg"
+    "image": "images/2.jpg"
   },
   {
     "id": 3,
     "name": "Картофельное пюре",
     "category": "Гарниры",
-    "image": "images/Картофельное пюре-720x960.jpg"
+    "image": "images/3.jpg"
   },
   {
     "id": 4,
     "name": "Гречка отварная",
     "category": "Гарниры",
-    "image": "images/Гречка отварная-720x960.jpg"
+    "image": "images/4.jpg"
   },
   {
     "id": 5,
     "name": "Блинчики",
     "category": "Завтраки",
-    "image": "images/Блинчики-720x960.jpg"
+    "image": "images/5.jpg"
   },
   {
     "id": 6,
     "name": "Рис с морковкой и луком",
     "category": "Гарниры",
-    "image": "images/Рис с морковкой и луком-720x960.jpg"
+    "image": "images/6.jpg"
   },
   {
     "id": 7,
     "name": "Овощи запечные или на гриле",
     "category": "Гарниры",
-    "image": "images/Овощи запечные или на гриле-720x960.jpg"
+    "image": "images/7.jpg"
   },
   {
     "id": 8,
     "name": "Котлеты",
     "category": "Мясные блюда",
-    "image": "images/Котлеты-720x960.jpg"
+    "image": "images/8.jpg"
   },
   {
     "id": 9,
     "name": "Пельмени",
     "category": "Пельмени",
-    "image": "images/Пельмени-720x960.jpg"
+    "image": "images/9.jpg"
   },
   {
     "id": 10,
     "name": "Бутерброды в дорогу",
     "category": "Закуски",
-    "image": "images/placeholder-720x960.png"
+    "image": "images/10.jpg"
   },
   {
     "id": 11,
     "name": "Жареная курица в майонезе",
     "category": "Мясные блюда",
-    "image": "images/Жареная курица в майонезе-720x960.jpg"
+    "image": "images/11.jpg"
   },
   {
     "id": 12,
     "name": "Рубленые куриные котлеты",
     "category": "Мясные блюда",
-    "image": "images/Рубленые куриные котлеты-720x960.jpg"
+    "image": "images/12.jpg"
   },
   {
     "id": 13,
     "name": "Плов",
     "category": "Основные блюда",
-    "image": "images/Плов-720x960.jpg"
+    "image": "images/13.jpg"
   },
   {
     "id": 14,
     "name": "Фаршированный перец",
     "category": "Основные блюда",
-    "image": "images/Фаршированный перец-720x960.jpg"
+    "image": "images/14.jpg"
   },
   {
     "id": 15,
     "name": "Макароны с сарделькой",
     "category": "Паста",
-    "image": "images/Макароны с сарделькой-720x960.jpg"
+    "image": "images/15.jpg"
   },
   {
     "id": 16,
     "name": "Картошка жареная",
     "category": "Гарниры",
-    "image": "images/Картошка жареная-720x960.jpg"
+    "image": "images/16.jpg"
   },
   {
     "id": 17,
     "name": "Тушеная капуста с мясом",
     "category": "Мясные блюда",
-    "image": "images/Тушеная капуста с мясом-720x960.jpg"
+    "image": "images/17.jpg"
   },
   {
     "id": 18,
     "name": "Начинка для блинчиков с лососем и сыром",
     "category": "Блины",
-    "image": "images/placeholder-720x960.png"
+    "image": "images/18.jpg"
   },
   {
     "id": 19,
     "name": "Оладьи на кефире",
     "category": "Завтраки",
-    "image": "images/oladi-na-kefire-720x960.jpg"
+    "image": "images/19.jpg"
   },
   {
     "id": 20,
     "name": "Начинка для блинчиков с охотничьими колбасками",
     "category": "Блины",
-    "image": "images/placeholder-720x960.png"
+    "image": "images/20.jpg"
   },
   {
     "id": 21,
     "name": "Салат с фенхелем",
     "category": "Салаты",
-    "image": "images/Салат с фенхелем-720x960.jpg"
+    "image": "images/21.jpg"
   },
   {
     "id": 22,
     "name": "Жареные кабачки или баклажаны с чесночным соусом",
     "category": "Гарниры",
-    "image": "images/zharenye-kabachki-ili-baklazhany-s-chesnochnym-sousom-720x960.jpg"
+    "image": "images/22.jpg"
   },
   {
     "id": 23,
     "name": "Паста с креветками в сливочном соусе",
     "category": "Паста",
-    "image": "images/Фарфалле с креветками в сливочном соусе-720x960.jpg"
+    "image": "images/23.jpg"
   },
   {
     "id": 24,
     "name": "Салат из помидоров и огурцов",
     "category": "Салаты",
-    "image": "images/Салат из помидоров и огурцов-720x960.jpg"
+    "image": "images/24.jpg"
   },
   {
     "id": 25,
     "name": "Салат с пекинской капусты, огурцом и перцем",
     "category": "Салаты",
-    "image": "images/Салат с пекинской капусты-720x960.jpg"
+    "image": "images/25.jpg"
   },
   {
     "id": 26,
     "name": "Борщ",
     "category": "Супы",
-    "image": "images/Борщ-720x960.jpg"
+    "image": "images/26.jpg"
   },
   {
     "id": 27,
     "name": "Бутики или тарталетки с сыром и помидором",
     "category": "Закуски",
-    "image": "images/butiki-ili-tartaletki-s-syrom-i-pomidorom-720x960.jpg"
+    "image": "images/27.jpg"
   },
   {
     "id": 28,
     "name": "Бутерброды с красной икрой",
     "category": "Закуски",
-    "image": "images/buterbrody-s-krasnoĭ-ikroĭ-720x960.jpg"
+    "image": "images/28.jpg"
   },
   {
     "id": 29,
     "name": "Куриные котлеты с майонезом",
     "category": "Мясные блюда",
-    "image": "images/Куриные котлеты с майонезом-720x960.jpg"
+    "image": "images/29.jpg"
   },
   {
     "id": 30,
     "name": "Ребрышки жареные",
     "category": "Мясные блюда",
-    "image": "images/Ребрышки жареные-720x960.jpg"
+    "image": "images/30.jpg"
   },
   {
     "id": 31,
     "name": "Макароны",
     "category": "Паста",
-    "image": "images/Макароны-720x960.jpg"
+    "image": "images/31.jpg"
   },
   {
     "id": 32,
     "name": "Мясо целиком в духовке",
     "category": "Мясные блюда",
-    "image": "images/Мясо целиком в духовке-720x960.jpg"
+    "image": "images/32.jpg"
   },
   {
     "id": 33,
     "name": "Салат из листьев и помидоров",
     "category": "Салаты",
-    "image": "images/Салат из листьев и помидоров-720x960.jpg"
+    "image": "images/33.jpg"
   },
   {
     "id": 34,
     "name": "Салат из капусты с огурцом",
     "category": "Салаты",
-    "image": "images/Салат из капусты с огурцом-720x960.jpg"
+    "image": "images/34.jpg"
   },
   {
     "id": 35,
     "name": "Картошка запеченная в курином соку",
     "category": "Гарниры",
-    "image": "images/Картошка запеченная в курином соку-720x960.jpg"
+    "image": "images/35.jpg"
   },
   {
     "id": 36,
     "name": "Стейк из говядины",
     "category": "Мясные блюда",
-    "image": "images/Стейк из говядины-720x960.JPG"
+    "image": "images/36.jpg"
   },
   {
     "id": 37,
     "name": "Стейк из лосося",
     "category": "Рыбные блюда",
-    "image": "images/Стейк из лосося-720x960.jpg"
+    "image": "images/37.jpg"
   },
   {
     "id": 38,
     "name": "Селедка под шубой",
     "category": "Салаты",
-    "image": "images/Селедка под шубой-720x960.jpg"
+    "image": "images/38.jpg"
   },
   {
     "id": 39,
     "name": "Маринованные шампиньоны (150г)",
     "category": "Закуски",
-    "image": "images/Маринованные шампиньоны-720x960.jpg"
+    "image": "images/39.jpg"
   },
   {
     "id": 40,
     "name": "Маринованная капуста",
     "category": "Закуски",
-    "image": "images/marinovannaja-kapusta-720x960.jpg"
+    "image": "images/40.jpg"
   },
   {
     "id": 41,
     "name": "Йогурт",
     "category": "Напитки",
-    "image": "images/Йогурт домашний-720x960.jpg"
+    "image": "images/41.jpg"
   },
   {
     "id": 42,
     "name": "Соленый лосось",
     "category": "Рыбные блюда",
-    "image": "images/Соленый лосось-720x960.jpg"
+    "image": "images/42.jpg"
   },
   {
     "id": 43,
     "name": "Винегрет",
     "category": "Салаты",
-    "image": "images/Винигрет-720x960.jpg"
+    "image": "images/43.jpg"
   },
   {
     "id": 44,
     "name": "Суп куриный с вармешелью",
     "category": "Супы",
-    "image": "images/Куриный суп-720x960.jpg"
+    "image": "images/44.jpg"
   },
   {
     "id": 45,
     "name": "Вареные яйца с майонезом",
     "category": "Завтраки",
-    "image": "images/varenye-jaĭca-s-maĭonezom-720x960.jpg"
+    "image": "images/45.jpg"
   },
   {
     "id": 46,
     "name": "Сэндвич-клаб с яйцом",
     "category": "Закуски",
-    "image": "images/sendvich-klab-s-jaĭcom_1-720x960.jpg"
+    "image": "images/46.jpg"
   },
   {
     "id": 47,
     "name": "Куриные сердечки с рисом или гречкой",
     "category": "Мясные блюда",
-    "image": "images/Куриные сердечки с рисом или гречкой-720x960.jpg"
+    "image": "images/47.jpg"
   },
   {
     "id": 48,
     "name": "Паста с ветчиной и грибами",
     "category": "Паста",
-    "image": "images/Паста с ветчиной и грибами-720x960.jpg"
+    "image": "images/48.jpg"
   },
   {
     "id": 49,
     "name": "Цезарь",
     "category": "Салаты",
-    "image": "images/Цезарь-720x960.jpg"
+    "image": "images/49.jpg"
   },
   {
     "id": 50,
     "name": "Пшенка",
     "category": "Гарниры",
-    "image": "images/Пшенка-720x960.jpg"
+    "image": "images/50.jpg"
   },
   {
     "id": 51,
     "name": "Омлет с перцем и сосисками",
     "category": "Завтраки",
-    "image": "images/omlet-s-percem-i-sosiskami-720x960.jpg"
+    "image": "images/51.jpg"
   },
   {
     "id": 52,
     "name": "Чебуреки",
     "category": "Закуски",
-    "image": "images/Чебуреки-720x960.jpg"
+    "image": "images/52.jpg"
   },
   {
     "id": 53,
     "name": "Бутерброды с печенью трески",
     "category": "Закуски",
-    "image": "images/buterbrody-s-pechenju-treski-720x960.jpg"
+    "image": "images/53.jpg"
   },
   {
     "id": 54,
     "name": "Шашлык в майонезе и винном уксусе",
     "category": "Мясные блюда",
-    "image": "images/Шашлык в майонезе и винном уксусе-720x960.jpg"
+    "image": "images/54.jpg"
   },
   {
     "id": 55,
     "name": "Вареный язык или сердце",
     "category": "Мясные блюда",
-    "image": "images/Вареный язык или сердце-720x960.jpg"
+    "image": "images/55.jpg"
   },
   {
     "id": 56,
     "name": "Торт «Солнышко»",
     "category": "Десерты",
-    "image": "images/tort-solnyshko-720x960.jpg"
+    "image": "images/56.jpg"
   },
   {
     "id": 57,
     "name": "Шакшука",
     "category": "Завтраки",
-    "image": "images/shakshuka-720x960.jpg"
+    "image": "images/57.jpg"
   },
   {
     "id": 58,
     "name": "Бутерброды со шпротами",
     "category": "Закуски",
-    "image": "images/buterbrody-so-shprotami-720x960.jpg"
+    "image": "images/58.jpg"
   },
   {
     "id": 59,
     "name": "Бутерброды с красной рыбой",
     "category": "Закуски",
-    "image": "images/buterbrody-s-krasnoĭ-ryboĭ-720x960.jpg"
+    "image": "images/59.jpg"
   },
   {
     "id": 60,
     "name": "Мясо по-французски",
     "category": "Мясные блюда",
-    "image": "images/Мясо по-французски-720x960.jpg"
+    "image": "images/60.jpg"
   },
   {
     "id": 61,
     "name": "Графские развалины",
     "category": "Десерты",
-    "image": "images/Графские развалины-720x960.jpg"
+    "image": "images/61.jpg"
   },
   {
     "id": 62,
     "name": "Поджарка грибная",
     "category": "Закуски",
-    "image": "images/Поджарка грибная-720x960.jpg"
+    "image": "images/62.jpg"
   },
   {
     "id": 63,
     "name": "Малосольные огурцы",
     "category": "Закуски",
-    "image": "images/malosolnye-ogurcy-720x960.jpg"
+    "image": "images/63.jpg"
   },
   {
     "id": 64,
     "name": "Тарталетки с красной рыбой, огурцом и творожным сыром",
     "category": "Закуски",
-    "image": "images/tartaletki-s-krasnoĭ-ryboĭ-720x960.jpg"
+    "image": "images/64.jpg"
   },
   {
     "id": 65,
     "name": "Тушеная картошка с мясом",
     "category": "Мясные блюда",
-    "image": "images/Тушеная картошка с мясом-720x960.jpg"
+    "image": "images/65.jpg"
   },
   {
     "id": 66,
     "name": "Шашлык свиной в винном уксусе",
     "category": "Мясные блюда",
-    "image": "images/Шашлык свиной в винном уксусе-720x960.jpg"
+    "image": "images/66.jpg"
   },
   {
     "id": 67,
     "name": "Особуко",
     "category": "Мясные блюда",
-    "image": "images/Особуко-720x960.jpg"
+    "image": "images/67.jpg"
   },
   {
     "id": 68,
     "name": "Гуляш из говядины",
     "category": "Мясные блюда",
-    "image": "images/Гуляш из говядины-720x960.jpg"
+    "image": "images/68.jpg"
   },
   {
     "id": 69,
     "name": "Пицца Грибной цыпленок",
     "category": "Основные блюда",
-    "image": "images/picca-gribnoĭ-cyplenok-720x960.jpg"
+    "image": "images/69.jpg"
   },
   {
     "id": 70,
     "name": "Пицца Итальянская",
     "category": "Основные блюда",
-    "image": "images/picca-italjanskaja-720x960.jpg"
+    "image": "images/70.jpg"
   },
   {
     "id": 71,
     "name": "Крабовый салат",
     "category": "Салаты",
-    "image": "images/Крабовый салат-720x960.jpg"
+    "image": "images/71.jpg"
   },
   {
     "id": 72,
     "name": "Солянка Maggi",
     "category": "Супы",
-    "image": "images/Солянка-720x960.png"
+    "image": "images/72.jpg"
   },
   {
     "id": 73,
     "name": "Лепешка с творогом, сыром и луком",
     "category": "Закуски",
-    "image": "images/Лепешка с творогом-720x960.jpg"
+    "image": "images/73.jpg"
   },
   {
     "id": 74,
     "name": "Шашлык куриный",
     "category": "Мясные блюда",
-    "image": "images/Шашлык куриный-720x960.jpg"
+    "image": "images/74.jpg"
   },
   {
     "id": 75,
     "name": "Гуляш из куриных сердечек",
     "category": "Мясные блюда",
-    "image": "images/Гуляш из куриных сердечек-720x960.jpg"
+    "image": "images/75.jpg"
   },
   {
     "id": 76,
     "name": "Голубцы",
     "category": "Мясные блюда",
-    "image": "images/golubcy-720x960.jpg"
+    "image": "images/76.jpg"
   },
   {
     "id": 77,
     "name": "Жареные колбаски",
     "category": "Мясные блюда",
-    "image": "images/Жареные колбаски-720x960.jpg"
+    "image": "images/77.jpg"
   },
   {
     "id": 78,
     "name": "Начинка для блинчиков с ветчиной и сыром",
     "category": "Блины",
-    "image": "images/placeholder-720x960.png"
+    "image": "images/78.jpg"
   },
   {
     "id": 79,
     "name": "Паста с курицей и грибами в сливочно-сырном соусе",
     "category": "Паста",
-    "image": "images/Паста с курицей и грибами в сливочно-сырном соусе-720x960.jpg"
+    "image": "images/79.jpg"
   },
   {
     "id": 80,
     "name": "Китайская лапша удон с курицей и овощами",
     "category": "Паста",
-    "image": "images/kitaĭskaja-lapsha-udon-s-kuriceĭ-i-ovoschami-720x960.jpg"
+    "image": "images/80.jpg"
   },
   {
     "id": 81,
     "name": "Салат Греческий",
     "category": "Салаты",
-    "image": "images/Салат Греческий-720x960.jpg"
+    "image": "images/81.jpg"
   },
   {
     "id": 82,
     "name": "Щавелевый суп",
     "category": "Супы",
-    "image": "images/Щавелевый суп-720x960.jpg"
+    "image": "images/82.jpg"
   },
   {
     "id": 83,
     "name": "Суп из сушеных грибов с капустой",
     "category": "Супы",
-    "image": "images/Суп из сушеных грибов с капустой-720x960.jpg"
+    "image": "images/83.jpg"
   },
   {
     "id": 84,
     "name": "Том Ям",
     "category": "Супы",
-    "image": "images/tom-jam-720x960.jpg"
+    "image": "images/84.jpg"
   },
   {
     "id": 85,
     "name": "Тирамису",
     "category": "Десерты",
-    "image": "images/tiramisu-720x960.jpg"
+    "image": "images/85.jpg"
   },
   {
     "id": 86,
     "name": "Колбаски на гриле",
     "category": "Мясные блюда",
-    "image": "images/Колбаски на гриле-720x960.jpg"
+    "image": "images/86.jpg"
   },
   {
     "id": 87,
     "name": "Ленивые голубцы",
     "category": "Мясные блюда",
-    "image": "images/Ленивые голубцы-720x960.jpg"
+    "image": "images/87.jpg"
   },
   {
     "id": 88,
     "name": "Мясо с луком и картошкой под тестом",
     "category": "Мясные блюда",
-    "image": "images/Мясо с луком и картошкой под тестом-720x960.jpg"
+    "image": "images/88.jpg"
   },
   {
     "id": 89,
     "name": "Беф бургиньон",
     "category": "Мясные блюда",
-    "image": "images/Беф бургиньон-720x960.jpg"
+    "image": "images/89.jpg"
   },
   {
     "id": 90,
     "name": "Питьевой йогурт",
     "category": "Напитки",
-    "image": "images/pitevoĭ-ĭogurt-720x960.jpg"
+    "image": "images/90.jpg"
   },
   {
     "id": 91,
     "name": "Гречка по-купечески с мясом",
     "category": "Основные блюда",
-    "image": "images/Гречка по-купечески с мясом-720x960.jpg"
+    "image": "images/91.jpg"
   },
   {
     "id": 92,
     "name": "Макароны с курицей и шпинатом",
     "category": "Паста",
-    "image": "images/Макароны с курицей и шпинатом-720x960.jpg"
+    "image": "images/92.jpg"
   },
   {
     "id": 93,
     "name": "Ленивые пельмени",
     "category": "Пельмени",
-    "image": "images/lenivye-pelmeni-720x960.jpg"
+    "image": "images/93.jpg"
   },
   {
     "id": 94,
     "name": "Скумбрия запеченная",
     "category": "Рыбные блюда",
-    "image": "images/Скумбрия запеченная-720x960.JPG"
+    "image": "images/94.jpg"
   },
   {
     "id": 95,
     "name": "Оливье",
     "category": "Салаты",
-    "image": "images/Оливье-720x960.jpg"
+    "image": "images/95.jpg"
   },
   {
     "id": 96,
     "name": "Салат из капусты",
     "category": "Салаты",
-    "image": "images/Салат из капусты-720x960.jpg"
+    "image": "images/96.jpg"
   },
   {
     "id": 97,
     "name": "Салат из дайкона и салатного листа",
     "category": "Салаты",
-    "image": "images/placeholder-720x960.png"
+    "image": "images/97.jpg"
   },
   {
     "id": 98,
     "name": "Салат Марфа",
     "category": "Салаты",
-    "image": "images/Салат Марфа-720x960.jpg"
+    "image": "images/98.jpg"
   },
   {
     "id": 99,
     "name": "Рассольник",
     "category": "Супы",
-    "image": "images/рассольник-720x960.png"
+    "image": "images/99.jpg"
   },
   {
     "id": 100,
     "name": "Драники",
     "category": "Гарниры",
-    "image": "images/Драники-720x960.jpg"
+    "image": "images/100.jpg"
   },
   {
     "id": 101,
     "name": "Профитроли",
     "category": "Десерты",
-    "image": "images/profitroli-720x960.jpg"
+    "image": "images/101.jpg"
   },
   {
     "id": 102,
     "name": "Синнабон",
     "category": "Десерты",
-    "image": "images/sinnabon-720x960.jpg"
+    "image": "images/102.jpg"
   },
   {
     "id": 103,
     "name": "Хотдог, чорипан",
     "category": "Закуски",
-    "image": "images/Хотдог-720x960.jpg"
+    "image": "images/103.jpg"
   },
   {
     "id": 104,
     "name": "Фаршированные шампиньоны",
     "category": "Закуски",
-    "image": "images/Фаршированные шампиньоны-720x960.jpg"
+    "image": "images/104.jpg"
   },
   {
     "id": 105,
     "name": "Рулетики из ветчины с сыром и яйцом",
     "category": "Закуски",
-    "image": "images/ruletiki-iz-vetchiny-s-syrom-i-jaĭcom-720x960.jpg"
+    "image": "images/105.jpg"
   },
   {
     "id": 106,
     "name": "Крылья в соевом соусе",
     "category": "Закуски",
-    "image": "images/krylja-v-soevom-souse-720x960.jpg"
+    "image": "images/106.jpg"
   },
   {
     "id": 107,
     "name": "Рагу с мясом",
     "category": "Мясные блюда",
-    "image": "images/Рагу с мясом-720x960.jpg"
+    "image": "images/107.jpg"
   },
   {
     "id": 108,
     "name": "Шашлык на вине с уксусом и водой",
     "category": "Мясные блюда",
-    "image": "images/Шашлык на вине с уксусом и водой-720x960.jpg"
+    "image": "images/108.jpg"
   },
   {
     "id": 109,
     "name": "Соус томатный с курицей",
     "category": "Мясные блюда",
-    "image": "images/Соус томатный с курицей-720x960.jpg"
+    "image": "images/109.jpg"
   },
   {
     "id": 110,
     "name": "Стейк из куриной грудки",
     "category": "Мясные блюда",
-    "image": "images/Стейк из куриной грудки-720x960.jpg"
+    "image": "images/110.jpg"
   },
   {
     "id": 111,
     "name": "Куриные отбивные в кляре или просто",
     "category": "Мясные блюда",
-    "image": "images/Куриные отбивные в кляре или просто-720x960.jpg"
+    "image": "images/111.jpg"
   },
   {
     "id": 112,
     "name": "Бархатная курица",
     "category": "Мясные блюда",
-    "image": "images/barhatnaja-kurica-720x960.jpg"
+    "image": "images/112.jpg"
   },
   {
     "id": 113,
     "name": "Тефтели в томатном соусе",
     "category": "Мясные блюда",
-    "image": "images/Тефтели в томатном соусе-720x960.jpg"
+    "image": "images/113.jpg"
   },
   {
     "id": 114,
     "name": "Жареные пельмени",
     "category": "Пельмени",
-    "image": "images/Жареные пельмени-720x960.jpg"
+    "image": "images/114.jpg"
   },
   {
     "id": 115,
     "name": "Рис, жареный с тунцом",
     "category": "Рыбные блюда",
-    "image": "images/Рис-720x960.jpg"
+    "image": "images/115.jpg"
   },
   {
     "id": 116,
     "name": "Стейк из тунца",
     "category": "Рыбные блюда",
-    "image": "images/steĭk-iz-tunca-720x960.jpg"
+    "image": "images/116.jpg"
   },
   {
     "id": 117,
     "name": "Морковка по-корейски",
     "category": "Салаты",
-    "image": "images/morkovka-po-koreĭski-720x960.jpg"
+    "image": "images/117.jpg"
   },
   {
     "id": 118,
     "name": "Грибной суп с перловой крупой",
     "category": "Супы",
-    "image": "images/Грибной суп с перловой крупой-720x960.jpg"
+    "image": "images/118.jpg"
   },
   {
     "id": 119,
     "name": "Суп харчо",
     "category": "Супы",
-    "image": "images/sup-harcho-720x960.jpg"
+    "image": "images/119.jpg"
   },
   {
     "id": 120,
     "name": "Цветная капуста в кляре",
     "category": "Гарниры",
-    "image": "images/Цветная капуста в кляре-720x960.jpg"
+    "image": "images/120.jpg"
   },
   {
     "id": 121,
     "name": "Пюре из батата",
     "category": "Гарниры",
-    "image": "images/Пюре из батата-720x960.jpg"
+    "image": "images/121.jpg"
   },
   {
     "id": 122,
     "name": "Спаржевая фасоль вареная",
     "category": "Гарниры",
-    "image": "images/sparzhevaja-fasol-varenaja-720x960.jpg"
+    "image": "images/122.jpg"
   },
   {
     "id": 123,
     "name": "Киноа",
     "category": "Гарниры",
-    "image": "images/kinoa-720x960.jpg"
+    "image": "images/123.jpg"
   },
   {
     "id": 124,
     "name": "Сырники",
     "category": "Десерты",
-    "image": "images/syrniki-720x960.jpg"
+    "image": "images/124.jpg"
   },
   {
     "id": 125,
     "name": "Творожно-тыквенная запеканка",
     "category": "Десерты",
-    "image": "images/tvorozhno-tykvennaja-zapekanka-720x960.jpg"
+    "image": "images/125.jpg"
   },
   {
     "id": 126,
     "name": "Яйца в смятку",
     "category": "Завтраки",
-    "image": "images/jaĭca-v-smjatku-720x960.jpg"
+    "image": "images/126.jpg"
   },
   {
     "id": 127,
     "name": "Французский омлет",
     "category": "Завтраки",
-    "image": "images/francuzskiĭ-omlet-720x960.jpg"
+    "image": "images/127.jpg"
   },
   {
     "id": 128,
     "name": "Французский хот-дог",
     "category": "Закуски",
-    "image": "images/Французский хот-дог-720x960.jpg"
+    "image": "images/128.jpg"
   },
   {
     "id": 129,
     "name": "Холодец",
     "category": "Закуски",
-    "image": "images/Холодец-720x960.jpg"
+    "image": "images/129.jpg"
   },
   {
     "id": 130,
     "name": "Слойки с жареными грибами, луком и с курицей",
     "category": "Закуски",
-    "image": "images/Слойки с жареными грибами-720x960.jpg"
+    "image": "images/130.jpg"
   },
   {
     "id": 131,
     "name": "Шаурма",
     "category": "Закуски",
-    "image": "images/shaurma-720x960.jpg"
+    "image": "images/131.jpg"
   },
   {
     "id": 132,
     "name": "Паштет из куриной грудки с грибами",
     "category": "Закуски",
-    "image": "images/pashtet-iz-kurinoĭ-grudki-s-gribami-720x960.jpg"
+    "image": "images/132.jpg"
   },
   {
     "id": 133,
     "name": "Шкварки",
     "category": "Закуски",
-    "image": "images/shkvarki-720x960.jpg"
+    "image": "images/133.jpg"
   },
   {
     "id": 134,
     "name": "Сосиски в тесте",
     "category": "Закуски",
-    "image": "images/Сосиски в тесте-720x960.jpg"
+    "image": "images/134.jpg"
   },
   {
     "id": 135,
     "name": "Медленная бондиола в пиве",
     "category": "Мясные блюда",
-    "image": "images/Медленная бондиола в пиве-720x960.jpg"
+    "image": "images/135.jpg"
   },
   {
     "id": 136,
     "name": "Рулетики с фаршем",
     "category": "Мясные блюда",
-    "image": "images/Рулетики с фаршем-720x960.jpg"
+    "image": "images/136.jpg"
   },
   {
     "id": 137,
     "name": "Курица запечная с картофелем",
     "category": "Мясные блюда",
-    "image": "images/Курица запечная с картофелем-720x960.jpg"
+    "image": "images/137.jpg"
   },
   {
     "id": 138,
     "name": "Китайская свинина",
     "category": "Мясные блюда",
-    "image": "images/kitaĭskaja-svinina-720x960.jpg"
+    "image": "images/138.jpg"
   },
   {
     "id": 139,
     "name": "Картошка со свининой в духовке",
     "category": "Мясные блюда",
-    "image": "images/Картошка со свининой в духовке-720x960.jpg"
+    "image": "images/139.jpg"
   },
   {
     "id": 140,
     "name": "Мандариновый сироп",
     "category": "Десерты",
-    "image": "images/mandarinovyĭ-sirop-720x960.jpg"
+    "image": "images/140.jpg"
   },
   {
     "id": 141,
     "name": "Имбирный лимонад",
     "category": "Напитки",
-    "image": "images/imbirnyĭ-limonad-720x960.jpg"
+    "image": "images/141.jpg"
   },
   {
     "id": 142,
     "name": "Начинка для блинчиков из фарша",
     "category": "Блины",
-    "image": "images/nachinka-dlja-blinchikov-iz-farsha-720x960.jpg"
+    "image": "images/142.jpg"
   },
   {
     "id": 143,
     "name": "Лобио",
     "category": "Основные блюда",
-    "image": "images/lobio-720x960.jpg"
+    "image": "images/143.jpg"
   },
   {
     "id": 144,
     "name": "Жареные макароны с яйцом",
     "category": "Паста",
-    "image": "images/zharenye-makarony-s-jaĭcom-720x960.jpg"
+    "image": "images/144.jpg"
   },
   {
     "id": 145,
     "name": "Засолка рыбы - Сардины а-ля селедка",
     "category": "Рыбные блюда",
-    "image": "images/zasolka-ryby---sardiny-a-lja-seledka-720x960.jpg"
+    "image": "images/145.jpg"
   },
   {
     "id": 146,
     "name": "Засолка икры лососевой",
     "category": "Рыбные блюда",
-    "image": "images/placeholder-720x960.png"
+    "image": "images/146.jpg"
   },
   {
     "id": 147,
     "name": "Салат с пекинской капусты и колбасой",
     "category": "Салаты",
-    "image": "images/Салат с пекинской капусты и колбасой-720x960.jpg"
+    "image": "images/147.jpg"
   },
   {
     "id": 148,
     "name": "Майонез (100гр)",
     "category": "Соусы",
-    "image": "images/Майонез-720x960.jpg"
+    "image": "images/148.jpg"
   },
   {
     "id": 149,
     "name": "Чатни из лука",
     "category": "Соусы",
-    "image": "images/chatni-iz-luka-720x960.jpg"
+    "image": "images/149.jpg"
   },
   {
     "id": 150,
     "name": "Соус тартар",
     "category": "Соусы",
-    "image": "images/sous-tartar-720x960.jpg"
+    "image": "images/150.jpg"
   },
   {
     "id": 151,
     "name": "Крем-суп из шампиньонов",
     "category": "Супы",
-    "image": "images/krem-sup-iz-shampinonov-720x960.jpg"
+    "image": "images/151.jpg"
   },
   {
     "id": 152,
     "name": "Тыквенный суп-пюре",
     "category": "Супы",
-    "image": "images/тыквенный суп-720x960.jpg"
+    "image": "images/152.jpg"
   },
   {
     "id": 153,
     "name": "Жареная картошка с грибами и шкварками",
     "category": "Гарниры",
-    "image": "images/Жареная картошка с грибами и шкварками-720x960.jpg"
+    "image": "images/153.jpg"
   },
   {
     "id": 154,
     "name": "Запечная картошка со сливками",
     "category": "Гарниры",
-    "image": "images/Запечная картошка со сливками-720x960.jpg"
+    "image": "images/154.jpg"
   },
   {
     "id": 155,
     "name": "Капуста запечоная в духовке",
     "category": "Гарниры",
-    "image": "images/Капуста запечоная в духовке-720x960.jpg"
+    "image": "images/155.jpg"
   },
   {
     "id": 156,
     "name": "Перловка",
     "category": "Гарниры",
-    "image": "images/perlovka-720x960.jpg"
+    "image": "images/156.jpg"
   },
   {
     "id": 157,
     "name": "Кукуруза вареная",
     "category": "Гарниры",
-    "image": "images/kukuruza-varenaja-720x960.jpg"
+    "image": "images/157.jpg"
   },
   {
     "id": 158,
     "name": "Десерт из морковки и творога без выпечки",
     "category": "Десерты",
-    "image": "images/desert-iz-morkovki-i-tvoroga-bez-vypechki-720x960.jpg"
+    "image": "images/158.jpg"
   },
   {
     "id": 159,
     "name": "Сметанное желе",
     "category": "Десерты",
-    "image": "images/smetannoe-zhele-720x960.jpg"
+    "image": "images/159.jpg"
   },
   {
     "id": 160,
     "name": "Ленивые вареники из творога",
     "category": "Десерты",
-    "image": "images/lenivye-vareniki-iz-tvoroga-720x960.jpg"
+    "image": "images/160.jpg"
   },
   {
     "id": 161,
     "name": "Чизкейк Нью-йорк",
     "category": "Десерты",
-    "image": "images/chizkeĭk-nju-ĭork-1-720x960.jpg"
+    "image": "images/161.jpg"
   },
   {
     "id": 162,
     "name": "Печенье Орешки",
     "category": "Десерты",
-    "image": "images/pechene-oreshki-720x960.jpg"
+    "image": "images/162.jpg"
   },
   {
     "id": 163,
     "name": "Цукаты из апельсиновых корок",
     "category": "Десерты",
-    "image": "images/cukaty-iz-apelsinovyh-korok-1-720x960.jpg"
+    "image": "images/163.jpg"
   },
   {
     "id": 164,
     "name": "Печенье Конвертики с повидлом",
     "category": "Десерты",
-    "image": "images/pechene-konvertiki-s-povidlom-720x960.jpg"
+    "image": "images/164.jpg"
   },
   {
     "id": 165,
     "name": "Мраморное печенье",
     "category": "Десерты",
-    "image": "images/mramornoe-pechene-720x960.jpg"
+    "image": "images/165.jpg"
   },
   {
     "id": 166,
     "name": "Наполеон",
     "category": "Десерты",
-    "image": "images/napaleon-720x960.jpg"
+    "image": "images/166.jpg"
   },
   {
     "id": 167,
     "name": "Азербайджанский омлет КюКю с баклажаном",
     "category": "Завтраки",
-    "image": "images/Азербайджанский омлет КюКю с баклажаном-720x960.jpg"
+    "image": "images/167.jpg"
   },
   {
     "id": 168,
     "name": "Роллы из омлета с авокадо, помидорами и зеленью",
     "category": "Завтраки",
-    "image": "images/rolly-iz-omleta-s-avokado-720x960.jpg"
+    "image": "images/168.jpg"
   },
   {
     "id": 169,
     "name": "Французские гренки",
     "category": "Завтраки",
-    "image": "images/francuzskie-grenki-720x960.jpg"
+    "image": "images/169.jpg"
   },
   {
     "id": 170,
     "name": "Запеченное авокадо с яйцом и сыром",
     "category": "Завтраки",
-    "image": "images/zapechennoe-avokado-s-jaĭcom-i-syrom-720x960.jpg"
+    "image": "images/170.jpg"
   },
   {
     "id": 171,
     "name": "Оладьи из курицы и кабачков",
     "category": "Завтраки",
-    "image": "images/oladi-iz-kuricy-i-kabachkov-720x960.jpg"
+    "image": "images/171.jpg"
   },
   {
     "id": 172,
     "name": "Эмпанадос",
     "category": "Закуски",
-    "image": "images/Эмпанадос-720x960.jpg"
+    "image": "images/172.jpg"
   },
   {
     "id": 173,
     "name": "Гречаники",
     "category": "Мясные блюда",
-    "image": "images/Гречаники-720x960.jpg"
+    "image": "images/173.jpg"
   },
   {
     "id": 174,
     "name": "Слойки с грибами и картошкой",
     "category": "Закуски",
-    "image": "images/Слойки с грибами и картошкой-720x960.jpg"
+    "image": "images/174.jpg"
   },
   {
     "id": 175,
     "name": "Луковый пирог",
     "category": "Закуски",
-    "image": "images/Луковый пирог-720x960.jpg"
+    "image": "images/175.jpg"
   },
   {
     "id": 176,
     "name": "Блинчики свекольные с соленым лососем и творожным огурцом и салатом",
     "category": "Закуски",
-    "image": "images/blinchiki-svekolnye-s-solenym-lososem-i-tvorozhnym-ogurcom-i-salatom-720x960.jpg"
+    "image": "images/176.jpg"
   },
   {
     "id": 177,
     "name": "Квашеная капуста",
     "category": "Закуски",
-    "image": "images/kvashenaja-kapusta-720x960.jpg"
+    "image": "images/177.jpg"
   },
   {
     "id": 178,
     "name": "Баклажаны как грибы",
     "category": "Закуски",
-    "image": "images/baklazhany-kak-griby-720x960.jpg"
+    "image": "images/178.jpg"
   },
   {
     "id": 179,
     "name": "Рагу с говядиной и фенхелем",
     "category": "Мясные блюда",
-    "image": "images/Рагу с говядиной и фенхелем-720x960.jpg"
+    "image": "images/179.jpg"
   },
   {
     "id": 180,
     "name": "Говядина в китайском стиле",
     "category": "Мясные блюда",
-    "image": "images/Говядина в китайском стиле-720x960.jpg"
+    "image": "images/180.jpg"
   },
   {
     "id": 181,
     "name": "Куриные котлеты с творогом",
     "category": "Мясные блюда",
-    "image": "images/Куриные котлеты с творогом-720x960.jpg"
+    "image": "images/181.jpg"
   },
   {
     "id": 182,
     "name": "Запеченные куриные бедра",
     "category": "Мясные блюда",
-    "image": "images/Запеченные куриные бедра-720x960.jpg"
+    "image": "images/182.jpg"
   },
   {
     "id": 183,
     "name": "Рагу с курицей и чечевицей",
     "category": "Мясные блюда",
-    "image": "images/Рагу с курицей и чечевицей-720x960.jpg"
+    "image": "images/183.jpg"
   },
   {
     "id": 184,
     "name": "Запеченная утка",
     "category": "Мясные блюда",
-    "image": "images/utka-720x960.jpeg"
+    "image": "images/184.jpg"
   },
   {
     "id": 185,
     "name": "Рулетики из говядины",
     "category": "Мясные блюда",
-    "image": "images/ruletiki-iz-govjadiny-720x960.jpg"
+    "image": "images/185.jpg"
   },
   {
     "id": 186,
     "name": "Бедро индейки запеченное",
     "category": "Мясные блюда",
-    "image": "images/bedro-indeĭki-zapechennoe-720x960.jpg"
+    "image": "images/186.jpg"
   },
   {
     "id": 187,
     "name": "Свиная Рулька в Пальто",
     "category": "Мясные блюда",
-    "image": "images/svinaja-rulka-v-palto-720x960.jpg"
+    "image": "images/187.jpg"
   },
   {
     "id": 188,
     "name": "Бекон домашний",
     "category": "Мясные блюда",
-    "image": "images/bekon-domashniĭ-720x960.jpg"
+    "image": "images/188.jpg"
   },
   {
     "id": 189,
     "name": "Рагу с курицей и мелкими макаронами",
     "category": "Мясные блюда",
-    "image": "images/ragu-s-kuriceĭ-i-melkimi-makaronami-720x960.jpg"
+    "image": "images/189.jpg"
   },
   {
     "id": 190,
     "name": "Гуляш с фасолью",
     "category": "Мясные блюда",
-    "image": "images/guljash-s-fasolju-720x960.jpg"
+    "image": "images/190.jpg"
   },
   {
     "id": 191,
     "name": "Мусака",
     "category": "Мясные блюда",
-    "image": "images/musaka-720x960.jpg"
+    "image": "images/191.jpg"
   },
   {
     "id": 192,
     "name": "Куриный рулет с сыром",
     "category": "Мясные блюда",
-    "image": "images/kurinyĭ-rulet-s-syrom-720x960.jpg"
+    "image": "images/192.jpg"
   },
   {
     "id": 193,
     "name": "Куриные рулетики с сыром в сливочном соусе",
     "category": "Мясные блюда",
-    "image": "images/Снимок экрана 2021-12-20 в 4.01.49-1-720x960.png"
+    "image": "images/193.jpg"
   },
   {
     "id": 194,
     "name": "Начинка для блинчиков из курицы с жареным луком",
     "category": "Блины",
-    "image": "images/nachinka-dlja-blinchikov-iz-kuricy-s-zharenym-lukom-720x960.jpg"
+    "image": "images/194.jpg"
   },
   {
     "id": 195,
     "name": "Начинка для блинчиков из творога",
     "category": "Блины",
-    "image": "images/nachinka-dlja-blinchikov-iz-tvoroga-720x960.jpg"
+    "image": "images/195.jpg"
   },
   {
     "id": 196,
     "name": "Перловка с мясом и грибами",
     "category": "Основные блюда",
-    "image": "images/Перловка с мясом и грибами-720x960.jpg"
+    "image": "images/196.jpg"
   },
   {
     "id": 197,
     "name": "Гречневая каша с белыми грибами и сыром",
     "category": "Основные блюда",
-    "image": "images/Гречневая каша с белыми грибами и пармезаном-720x960.jpg"
+    "image": "images/197.jpg"
   },
   {
     "id": 198,
     "name": "Запеканка с баклажанами и свининой",
     "category": "Основные блюда",
-    "image": "images/zapekanka-s-baklazhanami-i-svininoĭ-720x960.jpg"
+    "image": "images/198.jpg"
   },
   {
     "id": 199,
     "name": "Булгур с мясом и овощами",
     "category": "Основные блюда",
-    "image": "images/bulgur-s-mjasom-i-ovoschami-720x960.jpg"
+    "image": "images/199.jpg"
   },
   {
     "id": 200,
     "name": "Пирог из поленты с курицей и шпинатом",
     "category": "Основные блюда",
-    "image": "images/pirog-iz-polenty-s-kuriceĭ-i--shpinatom-720x960.jpg"
+    "image": "images/200.jpg"
   },
   {
     "id": 201,
     "name": "Киш с семгой и шпинатом",
     "category": "Основные блюда",
-    "image": "images/kish-s-semgoĭ-i-shpinatom-720x960.jpg"
+    "image": "images/201.jpg"
   },
   {
     "id": 202,
     "name": "Плов с тыквой",
     "category": "Основные блюда",
-    "image": "images/плов с тыквой-720x960.jpg"
+    "image": "images/202.jpg"
   },
   {
     "id": 203,
     "name": "Макароны по-флотски",
     "category": "Паста",
-    "image": "images/Макароны по-флотски-720x960.jpg"
+    "image": "images/203.jpg"
   },
   {
     "id": 204,
     "name": "Хинкали",
     "category": "Пельмени",
-    "image": "images/hinkali-720x960.jpg"
+    "image": "images/204.jpg"
   },
   {
     "id": 205,
     "name": "Сушеная рыба",
     "category": "Рыбные блюда",
-    "image": "images/Сушеная рыба-720x960.jpg"
+    "image": "images/205.jpg"
   },
   {
     "id": 206,
     "name": "Скумбрия в горячем рассоле",
     "category": "Рыбные блюда",
-    "image": "images/Скумбрия в горячем рассоле-720x960.jpeg"
+    "image": "images/206.jpg"
   },
   {
     "id": 207,
     "name": "Кальмары, фаршированные рисом и грибами",
     "category": "Рыбные блюда",
-    "image": "images/Кальмары фаршированные рисом и грибами-720x960.jpg"
+    "image": "images/207.jpg"
   },
   {
     "id": 208,
     "name": "Горбуша соленая",
     "category": "Рыбные блюда",
-    "image": "images/gorbusha-solenaja-720x960.jpg"
+    "image": "images/208.jpg"
   },
   {
     "id": 209,
     "name": "Уха из форели",
     "category": "Рыбные блюда",
-    "image": "images/uha-iz-foreli-720x960.jpg"
+    "image": "images/209.jpg"
   },
   {
     "id": 210,
     "name": "Теплый салат с курицей, брокколи и перловкой",
     "category": "Салаты",
-    "image": "images/Теплый салат с курицей-720x960.jpg"
+    "image": "images/210.jpg"
   },
   {
     "id": 211,
     "name": "Суп с цветной капустой",
     "category": "Супы",
-    "image": "images/Суп с цветной капустой-720x960.jpg"
+    "image": "images/211.jpg"
   },
   {
     "id": 212,
     "name": "Холодник",
     "category": "Супы",
-    "image": "images/Холодник-720x960.jpg"
+    "image": "images/212.jpg"
   },
   {
     "id": 213,
     "name": "Суп из шампиньонов",
     "category": "Супы",
-    "image": "images/sup-iz-shampinonov-720x960.jpg"
+    "image": "images/213.jpg"
   },
   {
     "id": 214,
     "name": "Рамен",
     "category": "Супы",
-    "image": "images/ramen-720x960.jpg"
+    "image": "images/214.jpg"
   },
   {
     "id": 215,
     "name": "Рис с морковкой горошком и спаржевой фасолью",
     "category": "Гарниры",
-    "image": "images/Рис с морковкой горошком и спаржевой фасолью-720x960.jpg"
+    "image": "images/215.jpg"
   },
   {
     "id": 216,
     "name": "Драники из тыквы с беконом",
     "category": "Гарниры",
-    "image": "images/Драники из тыквы с беконом-720x960.jpg"
+    "image": "images/216.jpg"
   },
   {
     "id": 217,
     "name": "Рождественские шоколадные пудинги от Дженнаро Контальдо",
     "category": "Десерты",
-    "image": "images/rozhdestvenskie-shokoladnye-pudingi-ot-dzhennaro-kontaldo-720x960.jpg"
+    "image": "images/217.jpg"
   },
   {
     "id": 218,
     "name": "Творожный кекс с яйцами",
     "category": "Десерты",
-    "image": "images/Творожный кекс с яйцами-720x960.jpg"
+    "image": "images/218.jpg"
   },
   {
     "id": 219,
     "name": "Пудинг творожный с изюмом и яблоками",
     "category": "Десерты",
-    "image": "images/Пудинг творожный с изюмом и яблоками-720x960.jpg"
+    "image": "images/219.jpg"
   },
   {
     "id": 220,
     "name": "Тыквенный пирог с корицей",
     "category": "Десерты",
-    "image": "images/тыквенный пирог с корицей-720x960.jpg"
+    "image": "images/220.jpg"
   },
   {
     "id": 221,
     "name": "Американские блины",
     "category": "Завтраки",
-    "image": "images/Американские блины-720x960.jpg"
+    "image": "images/221.jpg"
   },
   {
     "id": 222,
     "name": "Кролик, запеченный с картофелем",
     "category": "Мясные блюда",
-    "image": "images/Кролик запеченный с картофелем-720x960.jpg"
+    "image": "images/222.jpg"
   },
   {
     "id": 223,
     "name": "Запеченная грудинка",
     "category": "Мясные блюда",
-    "image": "images/zapechennaja-grudinka-720x960.jpg"
+    "image": "images/223.jpg"
   },
   {
     "id": 224,
     "name": "Свинина в молоке",
     "category": "Мясные блюда",
-    "image": "images/svinina-v-moloke-720x960.jpg"
+    "image": "images/224.jpg"
   },
   {
     "id": 225,
     "name": "Говядина по-еврейски",
     "category": "Мясные блюда",
-    "image": "images/Говядина по-еврейски-720x960.jpg"
+    "image": "images/225.jpg"
   },
   {
     "id": 226,
     "name": "Треска в перечном соусе",
     "category": "Рыбные блюда",
-    "image": "images/treska-v-perechnom-souse-720x960.jpg"
+    "image": "images/226.jpg"
   },
   {
     "id": 227,
     "name": "Салат с тунцом и пекинской капустой",
     "category": "Салаты",
-    "image": "images/Снимок экрана 2021-12-19 в 19.52.26-720x960.png"
+    "image": "images/227.jpg"
   },
   {
     "id": 228,
     "name": "Салат с рукколой и курицей",
     "category": "Салаты",
-    "image": "images/Салат с рукколой и курицей-720x960.jpg"
+    "image": "images/228.jpg"
   },
   {
     "id": 229,
     "name": "Быстрый томатный суп",
     "category": "Супы",
-    "image": "images/томатный суп быстрый-720x960.jpg"
+    "image": "images/229.jpg"
   }
 ]
