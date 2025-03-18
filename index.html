@@ -15,6 +15,10 @@
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
 
   <style>
+        .container {
+      padding-left: 16px;
+      padding-right: 16px;
+    }
     body {
       margin-bottom: 120px; /* Чтобы контент не уезжал за край фиксированного бара */
       background: #F5F4F2;
@@ -24,9 +28,10 @@
       border: none;
       border-radius: 12px;
     }
-    /* Скругление верхней части изображения */
+    /* Фиксированное соотношение сторон 3:4 для изображений карточек */
     .card-img-top {
-      height: 200px;
+      width: 100%;
+      aspect-ratio: 3 / 4; /* соотношение сторон 3:4 */
       object-fit: cover;
       border-top-left-radius: 12px;
       border-top-right-radius: 12px;
@@ -91,7 +96,7 @@
       font-size: 0.9rem; /* уменьшенный заголовок блюда */
       margin-bottom: 16px; /* отступ между названием и кнопкой */
     }
-    /* Увеличенные заголовки категорий (напрямую для h4 внутри контейнера с блюдами) */
+    /* Увеличенные заголовки категорий */
     #dishesContainer > h4 {
       font-size: 1.7rem;
       font-weight: bold;
@@ -184,18 +189,19 @@
         container.append(`<h4 class="mt-4">${category}</h4>`);
         const rowDiv = $(`<div class="row row-cols-2 g-3"></div>`);
         grouped[category].forEach(dish => {
+          // Проверяем, добавлено ли блюдо в wantList
+          const isAdded = wantList.some(w => w.id === dish.id);
+          const buttonHtml = isAdded
+            ? `<button class="btn btn-light w-100 rounded-pill mt-auto remove-btn" data-id="${dish.id}">Передумал</button>`
+            : `<button class="btn btn-warning w-100 rounded-pill mt-auto want-btn" data-id="${dish.id}">Хочу!</button>`;
+
           const card = $(`
             <div class="col">
               <div class="card h-100">
-                <img src="${dish.image}" class="card-img-top" alt="${dish.name}">
+                <img src="${dish.image}" loading="lazy" class="card-img-top" alt="${dish.name}">
                 <div class="card-body d-flex flex-column">
                   <h5 class="card-title">${dish.name}</h5>
-                  <button
-                    class="btn btn-warning w-100 rounded-pill mt-auto want-btn"
-                    data-id="${dish.id}"
-                  >
-                    Хочу!
-                  </button>
+                  ${buttonHtml}
                 </div>
               </div>
             </div>
@@ -217,7 +223,7 @@
         const card = $(`
           <div class="col">
             <div class="card h-100">
-              <img src="${dish.image}" class="card-img-top" alt="${dish.name}">
+              <img src="${dish.image}" loading="lazy" class="card-img-top" alt="${dish.name}">
               <div class="card-body d-flex flex-column">
                 <h5 class="card-title">${dish.name}</h5>
                 <button
@@ -240,6 +246,7 @@
     function removeFromWant(id) {
       wantList = wantList.filter(d => d.id !== id);
       renderWant();
+      renderGroupedDishes(); // обновляем меню, чтобы кнопка изменилась обратно
     }
 
     // 7) Функция отправки списка блюд через Web Share API
@@ -272,10 +279,11 @@
         if (dish && !wantList.some(d => d.id === id)) {
           wantList.push(dish);
           renderWant();
+          renderGroupedDishes(); // обновляем меню, чтобы кнопка изменилась
         }
       });
 
-      // При клике на кнопку "Передумал" в разделе "Хочу!"
+      // При клике на кнопку "Передумал" (как в меню, так и в разделе "Хочу!")
       $(document).on("click", ".remove-btn", function() {
         const id = parseInt($(this).data("id"));
         removeFromWant(id);
@@ -285,6 +293,7 @@
       $("#clearBtn").click(function() {
         wantList = [];
         renderWant();
+        renderGroupedDishes();
       });
 
       // Кнопка "Отправить жене"
