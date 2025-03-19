@@ -14,97 +14,336 @@
   <!-- Telegram WebApp JS (если хотите открыть в Телеграме) -->
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
 
+  <!-- Подключаем современный шрифт -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+  
   <style>
-        .container {
-      padding-left: 16px;
-      padding-right: 16px;
+    :root {
+      --primary-color: #FF6B35;
+      --text-color: #202023;
+      --text-secondary: #72727A;
+      --background-color: #F8F7F4;
+      --card-background: #FFFFFF;
+      --button-color: #F0F0F0;
+      --button-text: #505055;
+      --button-hover: #E5E5E5;
+      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+      --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+      --border-radius-lg: 16px;
+      --border-radius-md: 12px;
+      --border-radius-sm: 8px;
     }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
     body {
-      margin-bottom: 120px; /* Чтобы контент не уезжал за край фиксированного бара */
-      background: #F5F4F2;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--background-color);
+      color: var(--text-color);
+      margin-bottom: 120px;
+      margin-top: 70px;
+      line-height: 1.5;
     }
-    /* Убираем обводку и добавляем скругление у карточек */
+    
+    .container {
+      padding-left: 20px;
+      padding-right: 20px;
+      max-width: 540px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    /* Стили карточек */
     .card {
       border: none;
-      border-radius: 12px;
+      border-radius: var(--border-radius-md);
+      background-color: var(--card-background);
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      overflow: hidden;
     }
-    /* Фиксированное соотношение сторон 3:4 для изображений карточек */
+    
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+    }
+    
+    /* >>> ИЗМЕНЕНО <<< */
+    /* Теперь соотношение 3:4, вместо 1:1 */
     .card-img-top {
       width: 100%;
-      aspect-ratio: 3 / 4; /* соотношение сторон 3:4 */
+      aspect-ratio: 3 / 4;
       object-fit: cover;
-      border-top-left-radius: 12px;
-      border-top-right-radius: 12px;
+      border-top-left-radius: var(--border-radius-md);
+      border-top-right-radius: var(--border-radius-md);
     }
+    
+    .card-body {
+      display: flex;
+      flex-direction: column;
+      padding: 16px;
+    }
+    
+    .card-title {
+      font-size: 0.85rem;
+      font-weight: 400;
+      margin-bottom: 14px;
+      color: var(--text-primary);
+    }
+    
     .hidden {
       display: none;
     }
-    /* ----- ФИКСИРОВАННЫЙ БАР (переключатель) ----- */
+    
+    /* Категории блюд */
+    #dishesContainer > h4 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin: 32px 0 32px;
+      color: var(--text-color);
+      letter-spacing: -0.5px;
+    }
+    
+    /* ----- ФИКСИРОВАННЫЙ ВЕРХНИЙ БАР (категории) ----- */
+    .category-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: var(--shadow-sm);
+      padding: 12px 10px;
+      overflow-x: auto;
+      white-space: nowrap;
+      z-index: 10000;
+      scrollbar-width: none;
+    }
+    
+    .category-bar::-webkit-scrollbar {
+      display: none;
+    }
+    
+    .category-bar button {
+      display: inline-block;
+      border: none;
+      background: transparent;
+      color: var(--text-color);
+      margin-right: 8px;
+      font-weight: 400;
+      padding: 8px 16px;
+      border-radius: 9999px;
+      transition: all 0.2s ease;
+      font-size: 0.9rem;
+    }
+    
+    .category-bar button:hover {
+      background: var(--button-hover);
+    }
+    
+    .category-bar button.active {
+      background: var(--button-color);
+      color: black;
+    }
+    
+    /* ----- ФИКСИРОВАННЫЙ НИЖНИЙ БАР (переключатель) ----- */
     .bottom-switcher {
       position: fixed;
-      bottom: 20px;
+      bottom: 24px;
       left: 50%;
       transform: translateX(-50%);
-      width: 290px;
+      width: 85%;
+      max-width: 320px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 0.5rem;
-      background: rgba(92, 92, 92, 0.7);
-      backdrop-filter: blur(15px);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: var(--shadow-md);
       border-radius: 9999px;
-      padding: 0.5rem 0.75rem;
+      padding: 8px;
       z-index: 9999;
     }
+    
     .switch-btn {
       flex: 1;
       border: none;
       background: transparent;
-      color: #fff;
+      color: var(--text-color);
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 0.5rem;
+      gap: 8px;
       border-radius: 9999px;
       font-weight: 500;
-      padding: 0.5rem 0.75rem;
-      transition: background 0.3s ease;
+      padding: 10px 16px;
+      transition: all 0.2s ease;
       text-align: center;
+      font-size: 0.95rem;
     }
+    
     .switch-btn:hover {
-      background: rgba(255, 255, 255, 0.15);
+      background: var(--button-hover);
     }
+    
     .switch-btn.active {
-      background: rgba(255, 255, 255, 0.3);
+      background: var(--text-color);
+      color: white;
     }
-    /* Стили для «пилюль» со счётчиками */
+    
+    /* Стили для счётчиков */
     .counter-badge {
-      background: rgba(255, 255, 255, 0.3);
-      color: #fff;
-      padding: 2px 10px;
+      background: rgba(0, 0, 0, 0.1);
+      padding: 3px 10px;
       border-radius: 9999px;
-      font-size: 0.8rem;
-      font-weight: 700;
+      font-size: 0.75rem;
+      font-weight: 600;
     }
-    /* Изменения для карточек блюд */
-    .card-body {
+    
+    .switch-btn.active .counter-badge {
+      background: rgba(255, 255, 255, 0.25);
+      color: white;
+    }
+    
+    /* Кнопки действий */
+    .btn {
+      border-radius: 12px;
+      padding: 10px 20px;
+      font-weight: 500;
+      transition: all 0.2s ease;
+      border: none;
+    }
+    
+    .btn-primary, .want-btn {
+      background-color: var(--button-color);
+      color: var(--button-text);
+      border: none;
+    }
+    
+    .btn-primary:hover, .want-btn:hover {
+      background-color: var(--button-hover);
+      transform: translateY(-2px);
+    }
+    
+    .btn-light, .remove-btn {
+      background-color: var(--button-color);
+      color: var(--button-text);
+    }
+    
+    .btn-light:hover, .remove-btn:hover {
+      background-color: var(--button-hover);
+    }
+    
+    /* Секция Хочу! */
+    #wantSection {
+      padding-bottom: 100px; /* Дополнительное пространство для закрепленной кнопки */
+    }
+    
+    #wantSection h4 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: var(--text-color);
+      letter-spacing: -0.5px;
+    }
+    
+    #clearBtn {
+      color: #888;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+    
+    #clearBtn:hover {
+      color: #555;
+    }
+    
+    /* >>> ИЗМЕНЕНО <<< */
+    /* Теперь контейнер кнопки прозрачный и без тени,
+       а ширина совпадает с нижним баром */
+    .share-btn-container {
+      position: fixed;
+      bottom: 90px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 85%;
+      max-width: 320px;
+      display: flex;
+      justify-content: center;
+      /* убираем фон и тень */
+      background: none;
+      box-shadow: none;
+      z-index: 9998;
+      display: none; /* по умолчанию скрыта */
+    }
+    
+    /* >>> ИЗМЕНЕНО <<< */
+    /* Убираем белый фон (делаем фон кнопки оранжевым или как вам нужно) */
+    #shareBtn {
+      flex: 1;
+      background: var(--primary-color);
+      color: white;
+      font-weight: 600;
+      box-shadow: none;
+      border-radius: 9999px;
+      padding: 14px 32px;
+      border: none;
+    }
+    
+    #shareBtn:hover {
+      background-color: #E55A24;
+      transform: translateY(-2px);
+      box-shadow: none;
+    }
+    
+    /* Empty state */
+    .empty-state {
       display: flex;
       flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+      text-align: center;
+      min-height: 300px;
     }
-    .card-title {
-      font-size: 0.9rem; /* уменьшенный заголовок блюда */
-      margin-bottom: 16px; /* отступ между названием и кнопкой */
+    
+    .empty-state-icon {
+      font-size: 64px;
+      color: #DDD;
+      margin-bottom: 20px;
     }
-    /* Увеличенные заголовки категорий */
-    #dishesContainer > h4 {
-      font-size: 1.7rem;
-      font-weight: bold;
+    
+    .empty-state-text {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
       margin-bottom: 24px;
+      max-width: 260px;
+    }
+    
+    /* Адаптация для более крупных экранов */
+    @media (min-width: 640px) {
+      .row-cols-2 {
+        --bs-gutter-x: 1.5rem;
+      }
+      
+      .category-bar, .bottom-switcher {
+        background: rgba(255, 255, 255, 0.85);
+      }
     }
   </style>
 </head>
 <body>
+  <!-- Фиксированный верхний бар с категориями -->
+  <div id="categoryBar" class="category-bar">
+    <!-- Здесь будут динамически добавлены кнопки категорий -->
+  </div>
+
   <div class="container mt-4">
     <!-- Секция «Меню» (группируем блюда по категориям) -->
     <div id="menuSection">
@@ -115,23 +354,30 @@
 
     <!-- Секция «Хочу!» -->
     <div id="wantSection" class="hidden">
-      <!-- Заголовок и кнопка "Очистить" в одной строке -->
-      <div class="d-flex justify-content-between align-items-center mb-3">
+      <div class="d-flex justify-content-between align-items-center mb-4">
         <h4 class="m-0">Хочу!</h4>
-        <button id="clearBtn" class="btn btn-link p-0" style="font-size: 0.9rem;">Очистить</button>
+        <button id="clearBtn" class="btn btn-link p-0">Очистить</button>
       </div>
-      
-      <!-- Плитки выбранных блюд (2 в строке) -->
-      <div class="row row-cols-2 g-3" id="wantGrid">
-      </div>
-      
-      <!-- Кнопка "Отправить жене" по центру после всех блюд -->
-      <div class="mt-3 text-center">
-        <button id="shareBtn" class="btn btn-light rounded-pill" style="box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-          Отправить жене
-        </button>
+      <div id="wantContent">
+        <div class="row row-cols-2 g-3" id="wantGrid"></div>
+        
+        <!-- Empty state - отображается, когда нет выбранных блюд -->
+        <div class="empty-state" id="emptyState">
+          <div class="empty-state-icon">🍽️</div>
+          <p class="empty-state-text">Пока ничего не выбрано. Выберите блюда из меню</p>
+          <button id="backToMenuBtn" class="btn btn-light">Вернуться к меню</button>
+        </div>
       </div>
     </div>
+  </div>
+  
+  <!-- >>> ИЗМЕНЕНО <<< 
+       Кнопка "Отправить жене" теперь по умолчанию скрыта (display: none)
+       и показывается ТОЛЬКО на вкладке "Хочу!", если список не пуст -->
+  <div class="share-btn-container" id="shareBtnContainer">
+    <button id="shareBtn" class="btn">
+      Отправить жене
+    </button>
   </div>
 
   <!-- Фиксированный нижний бар (переключатель) -->
@@ -151,28 +397,104 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
   <script>
-    // 1) Инициализация Telegram WebApp (если нужно)
+    // Инициализация Telegram WebApp (если нужно)
     if (window.Telegram && window.Telegram.WebApp) {
       const tg = window.Telegram.WebApp;
       tg.ready();
     }
 
-    // 2) Переменные для данных блюд и списка "Хочу!"
-    let dishes = []; // будет заполнен из JSON
+    let dishes = []; // данные блюд из JSON
     let wantList = [];
 
-    // 3) Функция загрузки данных из JSON
-    function loadDishes() {
-      // Предполагается, что dishes.json находится в том же репозитории
-      $.getJSON("dishes.json", function(data) {
-        dishes = data;
-        renderGroupedDishes();
-      }).fail(function() {
-        console.error("Не удалось загрузить файл dishes.json");
+    // Вспомогательная функция для установки активной категории
+    function setActiveCategory(categoryName) {
+      const buttons = $("#categoryBar button");
+      buttons.each(function() {
+        const btnText = $(this).text().trim();
+        if (btnText === categoryName) {
+          $(this).addClass("active");
+          this.scrollIntoView({
+            behavior: "smooth",
+            block: "nearest",
+            inline: "center"
+          });
+        } else {
+          $(this).removeClass("active");
+        }
       });
     }
 
-    // 4) Функция отображения меню (группируем блюда по категориям)
+    // >>> ИЗМЕНЕНО <<<
+    // Логика, которая решает, показывать ли кнопку "Отправить жене"
+    // Показываем её только на вкладке "Хочу!" и только если список не пуст
+    function updateShareBtnVisibility() {
+      const isWantTabActive = !$("#wantSection").hasClass("hidden");
+      if (isWantTabActive && wantList.length > 0) {
+        $("#shareBtnContainer").show();
+      } else {
+        $("#shareBtnContainer").hide();
+      }
+    }
+
+    // Обновление статуса Empty State
+    function updateEmptyState() {
+      if (wantList.length === 0) {
+        $("#wantGrid").hide();
+        $("#emptyState").show();
+      } else {
+        $("#wantGrid").show();
+        $("#emptyState").hide();
+      }
+      // Вызываем новую функцию, которая скрывает или показывает кнопку
+      updateShareBtnVisibility();
+    }
+
+    // Загрузка данных из JSON
+    function loadDishes() {
+      $.getJSON("dishes.json", function(data) {
+        dishes = data;
+        renderCategoryBar();
+        renderGroupedDishes();
+      }).fail(function() {
+        console.error("Не удалось загрузить файл dishes.json");
+        // Для демонстрации используем тестовые данные
+        dishes = [
+          {id: 1, name: "Стейк рибай", category: "Мясо", image: "/api/placeholder/400/400"},
+          {id: 2, name: "Карпаччо из говядины", category: "Мясо", image: "/api/placeholder/400/400"},
+          {id: 3, name: "Дорадо на гриле", category: "Рыба", image: "/api/placeholder/400/400"},
+          {id: 4, name: "Том ям с креветками", category: "Супы", image: "/api/placeholder/400/400"},
+          {id: 5, name: "Салат Цезарь", category: "Салаты", image: "/api/placeholder/400/400"},
+          {id: 6, name: "Тирамису", category: "Десерты", image: "/api/placeholder/400/400"},
+        ];
+        renderCategoryBar();
+        renderGroupedDishes();
+      });
+    }
+
+    // Отрисовка верхней панели категорий
+    function renderCategoryBar() {
+      const categories = [...new Set(dishes.map(d => d.category))];
+      const bar = $("#categoryBar");
+      bar.empty();
+      categories.forEach(category => {
+        const button = $(`<button class="category-btn">${category}</button>`);
+        button.on("click", function() {
+          const barHeight = $("#categoryBar").outerHeight();
+          const targetId = `#category-${CSS.escape(category.replace(/\s+/g, '_'))}`;
+          const target = $(targetId);
+          if (target.length) {
+            $("html, body").stop(true).animate({
+              scrollTop: target.offset().top - barHeight - 10
+            }, 300, function() {
+              setActiveCategory(category);
+            });
+          }
+        });
+        bar.append(button);
+      });
+    }
+
+    // Отрисовка блюд, сгруппированных по категориям
     function renderGroupedDishes() {
       const grouped = {};
       dishes.forEach(dish => {
@@ -181,25 +503,21 @@
         }
         grouped[dish.category].push(dish);
       });
-
       const container = $("#dishesContainer");
       container.empty();
-
       for (const category in grouped) {
-        container.append(`<h4 class="mt-4">${category}</h4>`);
+        container.append(`<h4 id="category-${category.replace(/\s+/g, '_')}" class="mt-4">${category}</h4>`);
         const rowDiv = $(`<div class="row row-cols-2 g-3"></div>`);
         grouped[category].forEach(dish => {
-          // Проверяем, добавлено ли блюдо в wantList
           const isAdded = wantList.some(w => w.id === dish.id);
           const buttonHtml = isAdded
-            ? `<button class="btn btn-light w-100 rounded-pill mt-auto remove-btn" data-id="${dish.id}">Передумал</button>`
-            : `<button class="btn btn-warning w-100 rounded-pill mt-auto want-btn" data-id="${dish.id}">Хочу!</button>`;
-
+            ? `<button class="btn w-100 remove-btn mt-auto" data-id="${dish.id}">Передумал</button>`
+            : `<button class="btn w-100 want-btn mt-auto" data-id="${dish.id}">Хочу!</button>`;
           const card = $(`
             <div class="col">
               <div class="card h-100">
                 <img src="${dish.image}" loading="lazy" class="card-img-top" alt="${dish.name}">
-                <div class="card-body d-flex flex-column">
+                <div class="card-body">
                   <h5 class="card-title">${dish.name}</h5>
                   ${buttonHtml}
                 </div>
@@ -210,26 +528,21 @@
         });
         container.append(rowDiv);
       }
-
       $("#menuCount").text(dishes.length);
     }
 
-    // 5) Функция отображения раздела "Хочу!"
+    // Отрисовка раздела "Хочу!"
     function renderWant() {
       const grid = $("#wantGrid");
       grid.empty();
-
       wantList.forEach(dish => {
         const card = $(`
           <div class="col">
             <div class="card h-100">
               <img src="${dish.image}" loading="lazy" class="card-img-top" alt="${dish.name}">
-              <div class="card-body d-flex flex-column">
+              <div class="card-body">
                 <h5 class="card-title">${dish.name}</h5>
-                <button
-                  class="btn btn-light w-100 rounded-pill mt-auto remove-btn"
-                  data-id="${dish.id}"
-                >
+                <button class="btn w-100 remove-btn mt-auto" data-id="${dish.id}">
                   Передумал
                 </button>
               </div>
@@ -238,18 +551,18 @@
         `);
         grid.append(card);
       });
-
       $("#wantCount").text(wantList.length);
+      updateEmptyState();
     }
 
-    // 6) Функция удаления блюда из wantList
+    // Удаление блюда из списка "Хочу!"
     function removeFromWant(id) {
       wantList = wantList.filter(d => d.id !== id);
       renderWant();
-      renderGroupedDishes(); // обновляем меню, чтобы кнопка изменилась обратно
+      renderGroupedDishes();
     }
 
-    // 7) Функция отправки списка блюд через Web Share API
+    // Отправка списка через Web Share API (пример)
     function shareWantedList() {
       if (wantList.length === 0) {
         alert("В списке пока ничего нет.");
@@ -257,9 +570,7 @@
       }
       const listText = "Мой список блюд:\n" + wantList.map(d => "- " + d.name).join("\n");
       if (navigator.share) {
-        navigator.share({
-          text: listText
-        }).catch(err => {
+        navigator.share({ text: listText }).catch(err => {
           console.error("Ошибка при использовании Web Share API:", err);
         });
       } else {
@@ -267,38 +578,56 @@
       }
     }
 
-    // 8) Логика поведения
-    $(document).ready(function() {
-      // Загружаем данные из JSON
-      loadDishes();
+    // Обработчик скролла для подсветки активной категории (только для страницы «Меню»)
+    $(window).on("scroll", function() {
+      if (!$("#menuSection").is(":visible")) return;
+      const scrollPos = $(document).scrollTop();
+      const barHeight = $("#categoryBar").outerHeight();
+      const currentSection = $("h4[id^='category-']").filter(function() {
+        return ($(this).offset().top - barHeight - 20) <= scrollPos;
+      }).last();
+      if (!currentSection.length) return;
+      const activeCategory = currentSection.text().trim();
+      setActiveCategory(activeCategory);
+    });
 
-      // При клике на кнопку "Хочу!" в карточке блюда
+    // Инициализация и обработчики переключения между разделами
+    $(document).ready(function() {
+      loadDishes();
+      updateEmptyState();
+
       $(document).on("click", ".want-btn", function() {
         const id = parseInt($(this).data("id"));
         const dish = dishes.find(d => d.id === id);
         if (dish && !wantList.some(d => d.id === id)) {
           wantList.push(dish);
           renderWant();
-          renderGroupedDishes(); // обновляем меню, чтобы кнопка изменилась
+          renderGroupedDishes();
         }
       });
 
-      // При клике на кнопку "Передумал" (как в меню, так и в разделе "Хочу!")
       $(document).on("click", ".remove-btn", function() {
         const id = parseInt($(this).data("id"));
         removeFromWant(id);
       });
 
-      // Кнопка "Очистить"
       $("#clearBtn").click(function() {
         wantList = [];
         renderWant();
         renderGroupedDishes();
       });
 
-      // Кнопка "Отправить жене"
       $("#shareBtn").click(function() {
         shareWantedList();
+      });
+      
+      $("#backToMenuBtn").click(function() {
+        $("#menuSection").removeClass("hidden");
+        $("#wantSection").addClass("hidden");
+        $("#menuTab").addClass("active");
+        $("#wantTab").removeClass("active");
+        $("#categoryBar").show();
+        updateShareBtnVisibility(); // при возврате на "Меню" скрываем кнопку
       });
 
       // Переключение между разделами "Меню" и "Хочу!"
@@ -307,6 +636,8 @@
         $("#wantSection").addClass("hidden");
         $(this).addClass("active");
         $("#wantTab").removeClass("active");
+        $("#categoryBar").show();
+        updateShareBtnVisibility(); // скрыть кнопку "Отправить жене"
       });
 
       $("#wantTab").click(function() {
@@ -314,6 +645,8 @@
         $("#wantSection").removeClass("hidden");
         $(this).addClass("active");
         $("#menuTab").removeClass("active");
+        $("#categoryBar").hide();
+        updateShareBtnVisibility(); // показать кнопку, если список не пуст
       });
     });
   </script>
