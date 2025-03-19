@@ -1324,5 +1324,35 @@
     "name": "Быстрый томатный суп",
     "category": "Супы",
     "image": "images/229.jpg"
+  },
+  {
+    "id": 230,
+    "name": "Корзиночки с белковым кремом",
+    "category": "Десерты",
+    "image": "images/230.jpg"
+  },
+  {
+    "id": 231,
+    "name": "Макдональдс",
+    "category": "Фастфуд",
+    "image": "images/231.jpg"
+  },
+  {
+    "id": 232,
+    "name": "Суши",
+    "category": "Фастфуд",
+    "image": "images/232.jpg"
+  },
+  {
+    "id": 233,
+    "name": "Панини",
+    "category": "Фастфуд",
+    "image": "images/233.jpg"
+  },
+  {
+    "id": 234,
+    "name": "Гороховый суп",
+    "category": "Супы",
+    "image": "images/234.jpg"
   }
 ]
