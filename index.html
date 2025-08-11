@@ -5,438 +5,439 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Давай жрать!</title>
 
-  <!-- Bootstrap CSS (для сетки и карточек) -->
+  <!-- Bootstrap CSS -->
   <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
     rel="stylesheet"
+    crossorigin="anonymous"
   />
 
-  <!-- Telegram WebApp JS (если хотите открыть в Телеграме) -->
+  <!-- Telegram WebApp JS (опционально) -->
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
 
-  <!-- Подключаем современный шрифт -->
+  <!-- Шрифты -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
-  
+
   <style>
     :root {
       --primary-color: #FF6B35;
-      --text-color: #202023;
-      --text-secondary: #72727A;
-      --background-color: #F8F7F4;
+      --text-color: #1E1F23;
+      --text-secondary: #6D6E76;
+      --background-color: #F7F7F9;
       --card-background: #FFFFFF;
-      --button-color: #F0F0F0;
-      --button-text: #505055;
-      --button-hover: #E5E5E5;
-      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
-      --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
-      --border-radius-lg: 16px;
-      --border-radius-md: 12px;
-      --border-radius-sm: 8px;
+      --button-color: #F1F2F4;
+      --button-text: #3C3D43;
+      --button-hover: #E6E7EB;
+      --shadow-sm: 0 6px 18px rgba(18, 18, 23, 0.06);
+      --shadow-md: 0 10px 28px rgba(18, 18, 23, 0.10);
+      --radius-xl: 20px;
+      --radius-lg: 16px;
+      --radius-md: 12px;
+      --radius-sm: 10px;
     }
-    
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --text-color: #EDEEF2;
+        --text-secondary: #B3B6BF;
+        --background-color: #121316;
+        --card-background: #1A1B20;
+        --button-color: #2A2C33;
+        --button-text: #EDEEF2;
+        --button-hover: #323542;
+        --shadow-sm: 0 6px 18px rgba(0,0,0,0.35);
+        --shadow-md: 0 12px 30px rgba(0,0,0,0.45);
+      }
     }
-    
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
     body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      background-color: var(--background-color);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif;
+      background: radial-gradient(1200px 600px at 50% -10%, rgba(255,107,53,0.08), transparent),
+                  var(--background-color);
       color: var(--text-color);
-      margin-bottom: 120px;
-      margin-top: 70px;
-      line-height: 1.5;
+      margin: 0;
+      line-height: 1.55;
+      letter-spacing: 0.2px;
+      margin-bottom: 120px; /* под нижний бар */
+      margin-top: 72px;     /* под верхний бар */
+      -webkit-tap-highlight-color: transparent;
     }
-    
+
     .container {
-      padding-left: 20px;
-      padding-right: 20px;
-      max-width: 540px;
-      margin-left: auto;
-      margin-right: auto;
+      padding-left: 18px;
+      padding-right: 18px;
+      max-width: 560px;
+      margin: 0 auto;
     }
-    
-    /* Стили карточек */
+
+    /* ===== Карточки ===== */
     .card {
       border: none;
-      border-radius: var(--border-radius-md);
+      border-radius: var(--radius-lg);
       background-color: var(--card-background);
       box-shadow: var(--shadow-sm);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      overflow: hidden;
+      transition: transform .18s ease, box-shadow .18s ease;
+    }
+    .card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+
+    .media-wrapper {
+      position: relative;
+      border-radius: var(--radius-lg);
       overflow: hidden;
     }
-    
-    .card:hover {
-      transform: translateY(-3px);
-      box-shadow: var(--shadow-md);
-    }
-    
-    /* >>> ИЗМЕНЕНО <<< */
-    /* Теперь соотношение 3:4, вместо 1:1 */
+
     .card-img-top {
       width: 100%;
-      aspect-ratio: 3 / 4;
+      aspect-ratio: 3 / 4;      /* вертикальные, акцент на фото */
       object-fit: cover;
-      border-top-left-radius: var(--border-radius-md);
-      border-top-right-radius: var(--border-radius-md);
+      background: #E9EAEE;
+      display: block;
+      transition: filter .18s ease, transform .18s ease;
     }
-    
-    .card-body {
+
+    .card.selected .card-img-top {
+      filter: saturate(1.05) contrast(1.02);
+    }
+
+    /* Плашка с названием (второстепенно) */
+    .img-label {
+      position: absolute;
+      inset: auto 0 0 0;
+      padding: 10px 12px;
+      background: linear-gradient(to top, rgba(0,0,0,0.55), rgba(0,0,0,0.0));
+      color: #fff;
       display: flex;
-      flex-direction: column;
-      padding: 16px;
+      align-items: end;
+      min-height: 72px;
     }
-    
-    .card-title {
-      font-size: 0.85rem;
-      font-weight: 400;
-      margin-bottom: 14px;
-      color: var(--text-primary);
+    .dish-name {
+      font-size: .92rem;
+      font-weight: 600;
+      opacity: .95;
     }
-    
-    .hidden {
-      display: none;
+
+    /* Кнопка-переключатель (плюс/галка) */
+    .img-toggle {
+      position: absolute;
+      top: 10px; right: 10px;
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      border: none;
+      background: rgba(0,0,0,0.45);
+      color: #fff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+      transition: transform .16s ease, background .16s ease;
+      cursor: pointer;
     }
-    
-    /* Категории блюд */
+    .img-toggle:hover { transform: translateY(-1px); }
+    .img-toggle:active { transform: translateY(0); }
+    .img-toggle svg { width: 22px; height: 22px; }
+    .img-toggle .icon-check { display: none; }
+    .img-toggle.active { background: var(--primary-color); }
+    .img-toggle.active .icon-plus { display: none; }
+    .img-toggle.active .icon-check { display: block; }
+
+    .hidden { display: none !important; }
+
+    /* ===== Заголовки категорий ===== */
     #dishesContainer > h4 {
-      font-size: 1.75rem;
-      font-weight: 700;
-      margin: 32px 0 32px;
+      font-size: 1.05rem;
+      font-weight: 800;
+      margin: 28px 0 14px;
       color: var(--text-color);
-      letter-spacing: -0.5px;
+      letter-spacing: -0.2px;
     }
-    
-    /* ----- ФИКСИРОВАННЫЙ ВЕРХНИЙ БАР (категории) ----- */
+
+    /* ===== Верхняя панель категорий ===== */
     .category-bar {
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background: rgba(255, 255, 255, 0.9);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
+      top: 0; left: 0; width: 100%;
+      background: rgba(255,255,255,0.85);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
       box-shadow: var(--shadow-sm);
-      padding: 12px 10px;
+      padding: 10px 8px;
       overflow-x: auto;
       white-space: nowrap;
       z-index: 10000;
       scrollbar-width: none;
     }
-    
-    .category-bar::-webkit-scrollbar {
-      display: none;
-    }
-    
-    .category-bar button {
-      display: inline-block;
+    .category-bar::-webkit-scrollbar { display: none; }
+    .category-bar .category-btn {
+      display: inline-flex;
+      align-items: center;
       border: none;
       background: transparent;
       color: var(--text-color);
       margin-right: 8px;
-      font-weight: 400;
-      padding: 8px 16px;
+      padding: 8px 14px;
       border-radius: 9999px;
-      transition: all 0.2s ease;
-      font-size: 0.9rem;
+      transition: background .18s ease, transform .18s ease;
+      font-size: .92rem;
     }
-    
-    .category-bar button:hover {
-      background: var(--button-hover);
-    }
-    
-    .category-bar button.active {
+    .category-bar .category-btn:hover { background: var(--button-hover); }
+    .category-bar .category-btn.active {
       background: var(--button-color);
-      color: black;
+      box-shadow: inset 0 0 0 1px rgba(0,0,0,.04);
     }
-    
-    /* ----- ФИКСИРОВАННЫЙ НИЖНИЙ БАР (переключатель) ----- */
+
+    /* ===== Нижний переключатель ===== */
     .bottom-switcher {
       position: fixed;
-      bottom: 24px;
-      left: 50%;
+      bottom: 22px; left: 50%;
       transform: translateX(-50%);
-      width: 85%;
-      max-width: 320px;
-      display: flex;
+      width: min(92%, 360px);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
       align-items: center;
-      justify-content: space-between;
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
+      background: rgba(255,255,255,0.85);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
       box-shadow: var(--shadow-md);
       border-radius: 9999px;
       padding: 8px;
       z-index: 9999;
     }
-    
     .switch-btn {
-      flex: 1;
       border: none;
       background: transparent;
       color: var(--text-color);
-      display: flex;
+      display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 8px;
       border-radius: 9999px;
-      font-weight: 500;
-      padding: 10px 16px;
-      transition: all 0.2s ease;
+      font-weight: 600;
+      padding: 10px 14px;
+      transition: background .18s ease, transform .18s ease;
       text-align: center;
-      font-size: 0.95rem;
+      font-size: .95rem;
     }
-    
-    .switch-btn:hover {
-      background: var(--button-hover);
-    }
-    
-    .switch-btn.active {
-      background: var(--text-color);
-      color: white;
-    }
-    
-    /* Стили для счётчиков */
+    .switch-btn:hover { background: var(--button-hover); }
+    .switch-btn.active { background: var(--text-color); color: white; }
     .counter-badge {
-      background: rgba(0, 0, 0, 0.1);
-      padding: 3px 10px;
+      background: rgba(0,0,0,0.10);
+      padding: 2px 9px;
       border-radius: 9999px;
-      font-size: 0.75rem;
+      font-size: .75rem;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+    .switch-btn.active .counter-badge { background: rgba(255,255,255,0.25); color: #fff; }
+
+    /* ===== Раздел «Хочу!» ===== */
+    #wantSection { padding-bottom: 108px; }
+    #wantSection h4 {
+      font-size: 1.4rem;
+      font-weight: 800;
+      margin: 0;
+      letter-spacing: -0.3px;
+    }
+    #clearBtn {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: .9rem;
       font-weight: 600;
     }
-    
-    .switch-btn.active .counter-badge {
-      background: rgba(255, 255, 255, 0.25);
-      color: white;
-    }
-    
-    /* Кнопки действий */
-    .btn {
-      border-radius: 12px;
-      padding: 10px 20px;
-      font-weight: 500;
-      transition: all 0.2s ease;
-      border: none;
-    }
-    
-    .btn-primary, .want-btn {
-      background-color: var(--button-color);
-      color: var(--button-text);
-      border: none;
-    }
-    
-    .btn-primary:hover, .want-btn:hover {
-      background-color: var(--button-hover);
-      transform: translateY(-2px);
-    }
-    
-    .btn-light, .remove-btn {
-      background-color: var(--button-color);
-      color: var(--button-text);
-    }
-    
-    .btn-light:hover, .remove-btn:hover {
-      background-color: var(--button-hover);
-    }
-    
-    /* Секция Хочу! */
-    #wantSection {
-      padding-bottom: 100px; /* Дополнительное пространство для закрепленной кнопки */
-    }
-    
-    #wantSection h4 {
-      font-size: 1.75rem;
-      font-weight: 700;
-      margin-bottom: 20px;
-      color: var(--text-color);
-      letter-spacing: -0.5px;
-    }
-    
-    #clearBtn {
-      color: #888;
-      text-decoration: none;
-      font-size: 0.9rem;
-      font-weight: 500;
-    }
-    
-    #clearBtn:hover {
-      color: #555;
-    }
-    
-    /* >>> ИЗМЕНЕНО <<< */
-    /* Теперь контейнер кнопки прозрачный и без тени,
-       а ширина совпадает с нижним баром */
+    #clearBtn:hover { color: var(--text-color); }
+
+    /* ===== Кнопка «Отправить жене» ===== */
     .share-btn-container {
       position: fixed;
-      bottom: 90px;
+      bottom: 92px;
       left: 50%;
       transform: translateX(-50%);
-      width: 85%;
-      max-width: 320px;
-      display: flex;
-      justify-content: center;
-      /* убираем фон и тень */
-      background: none;
-      box-shadow: none;
-      z-index: 9998;
+      width: min(92%, 360px);
       display: none; /* по умолчанию скрыта */
+      z-index: 9998;
     }
-    
-    /* >>> ИЗМЕНЕНО <<< */
-    /* Убираем белый фон (делаем фон кнопки оранжевым или как вам нужно) */
     #shareBtn {
-      flex: 1;
+      width: 100%;
       background: var(--primary-color);
-      color: white;
-      font-weight: 600;
-      box-shadow: none;
+      color: #fff;
+      font-weight: 800;
       border-radius: 9999px;
-      padding: 14px 32px;
+      padding: 15px 26px;
+      box-shadow: 0 10px 24px rgba(255,107,53,.35);
       border: none;
+      transition: transform .18s ease, filter .18s ease;
     }
-    
-    #shareBtn:hover {
-      background-color: #E55A24;
-      transform: translateY(-2px);
-      box-shadow: none;
-    }
-    
-    /* Empty state */
+    #shareBtn:hover { transform: translateY(-1px); filter: brightness(0.98); }
+
+    /* ===== Пустой список ===== */
     .empty-state {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 40px 20px;
+      padding: 42px 16px;
       text-align: center;
       min-height: 300px;
+      gap: 12px;
+      opacity: .95;
     }
-    
-    .empty-state-icon {
-      font-size: 64px;
-      color: #DDD;
-      margin-bottom: 20px;
+    .empty-state-icon { font-size: 64px; opacity: .6; }
+    .empty-state-text { font-size: 1rem; color: var(--text-secondary); max-width: 280px; }
+
+    /* ===== Анимации появления карточек ===== */
+    .fade-in-up {
+      opacity: 0;
+      transform: translateY(8px);
+      animation: fadeInUp .35s ease forwards;
     }
-    
-    .empty-state-text {
-      font-size: 1.1rem;
-      color: var(--text-secondary);
-      margin-bottom: 24px;
-      max-width: 260px;
+    @keyframes fadeInUp {
+      to { opacity: 1; transform: translateY(0); }
     }
-    
-    /* Адаптация для более крупных экранов */
+
+    /* ===== Фокус ===== */
+    :focus-visible {
+      outline: 2px solid var(--primary-color);
+      outline-offset: 2px;
+      border-radius: 14px;
+    }
+
     @media (min-width: 640px) {
-      .row-cols-2 {
-        --bs-gutter-x: 1.5rem;
-      }
-      
       .category-bar, .bottom-switcher {
-        background: rgba(255, 255, 255, 0.85);
+        background: rgba(255,255,255,0.80);
       }
     }
   </style>
 </head>
 <body>
-  <!-- Фиксированный верхний бар с категориями -->
-  <div id="categoryBar" class="category-bar">
-    <!-- Здесь будут динамически добавлены кнопки категорий -->
+  <!-- Верхний бар с категориями -->
+  <div id="categoryBar" class="category-bar" role="tablist" aria-label="Категории">
+    <!-- динамически здесь -->
   </div>
 
-  <div class="container mt-4">
-    <!-- Секция «Меню» (группируем блюда по категориям) -->
-    <div id="menuSection">
-      <div id="dishesContainer">
-        <!-- Здесь появятся заголовки категорий и карточки блюд из JSON -->
-      </div>
+  <div class="container mt-3">
+    <!-- Секция «Меню» -->
+    <div id="menuSection" aria-labelledby="menuTab">
+      <div id="dishesContainer"><!-- сюда прилетят категории и карточки --></div>
     </div>
 
     <!-- Секция «Хочу!» -->
-    <div id="wantSection" class="hidden">
-      <div class="d-flex justify-content-between align-items-center mb-4">
+    <div id="wantSection" class="hidden" aria-labelledby="wantTab">
+      <div class="d-flex justify-content-between align-items-center mb-3">
         <h4 class="m-0">Хочу!</h4>
-        <button id="clearBtn" class="btn btn-link p-0">Очистить</button>
+        <button id="clearBtn" class="btn btn-link p-0" type="button" title="Очистить список">Очистить</button>
       </div>
+
       <div id="wantContent">
         <div class="row row-cols-2 g-3" id="wantGrid"></div>
-        
-        <!-- Empty state - отображается, когда нет выбранных блюд -->
-        <div class="empty-state" id="emptyState">
+
+        <!-- Empty state -->
+        <div class="empty-state" id="emptyState" aria-live="polite">
           <div class="empty-state-icon">🍽️</div>
           <p class="empty-state-text">Пока ничего не выбрано. Выберите блюда из меню</p>
-          <button id="backToMenuBtn" class="btn btn-light">Вернуться к меню</button>
+          <button id="backToMenuBtn" class="btn btn-light" type="button">Вернуться к меню</button>
         </div>
       </div>
     </div>
   </div>
-  
-  <!-- >>> ИЗМЕНЕНО <<< 
-       Кнопка "Отправить жене" теперь по умолчанию скрыта (display: none)
-       и показывается ТОЛЬКО на вкладке "Хочу!", если список не пуст -->
+
+  <!-- Кнопка «Отправить жене» -->
   <div class="share-btn-container" id="shareBtnContainer">
-    <button id="shareBtn" class="btn">
+    <button id="shareBtn" class="btn" type="button" title="Поделиться списком">
       Отправить жене
     </button>
   </div>
 
-  <!-- Фиксированный нижний бар (переключатель) -->
-  <div class="bottom-switcher">
-    <button id="menuTab" class="switch-btn active">
-      Меню
-      <span class="counter-badge" id="menuCount">0</span>
+  <!-- Нижний переключатель -->
+  <div class="bottom-switcher" role="tablist" aria-label="Разделы">
+    <button id="menuTab" class="switch-btn active" role="tab" aria-selected="true" aria-controls="menuSection" type="button">
+      Меню <span class="counter-badge" id="menuCount">0</span>
     </button>
-    <button id="wantTab" class="switch-btn">
-      Хочу!
-      <span class="counter-badge" id="wantCount">0</span>
+    <button id="wantTab" class="switch-btn" role="tab" aria-selected="false" aria-controls="wantSection" type="button">
+      Хочу! <span class="counter-badge" id="wantCount">0</span>
     </button>
   </div>
 
   <!-- jQuery + Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 
   <script>
-    // Инициализация Telegram WebApp (если нужно)
+    // === Полифилл CSS.escape для старых браузеров ===
+    (function() {
+      if (typeof window.CSS === "undefined") window.CSS = {};
+      if (typeof window.CSS.escape === "function") return;
+      window.CSS.escape = function(value) {
+        return String(value).replace(/[^a-zA-Z0-9_\u00A0-\uFFFF-]/g, function(ch) {
+          var hex = ch.charCodeAt(0).toString(16).toUpperCase();
+          return "\\" + hex + " ";
+        });
+      };
+    })();
+
+    // === Telegram WebApp (опционально) ===
+    let tg = null;
     if (window.Telegram && window.Telegram.WebApp) {
-      const tg = window.Telegram.WebApp;
-      tg.ready();
+      tg = window.Telegram.WebApp;
+      tg.ready?.();
     }
 
-    let dishes = []; // данные блюд из JSON
-    let wantList = [];
+    // === Глобальные данные ===
+    let dishes = [];              // блюда из JSON
+    let wantList = [];            // выбранные блюда
+    const WANT_STORAGE_KEY = "wantList.v1";
+    const LAST_CATEGORY_KEY = "lastCategory.v1";
 
-    // Вспомогательная функция для установки активной категории
+    // SVG-плейсхолдер
+    const PLACEHOLDER_IMG =
+      'data:image/svg+xml;utf8,' +
+      encodeURIComponent(`
+        <svg xmlns="http://www.w3.org/2000/svg" width="600" height="800">
+          <defs>
+            <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#f2f3f6"/>
+              <stop offset="100%" stop-color="#e6e8ee"/>
+            </linearGradient>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#g)"/>
+          <text x="50%" y="52%" text-anchor="middle" font-family="Inter,Arial" font-size="28" fill="#9aa0a6">Фото блюда</text>
+        </svg>
+      `);
+
+    function imgOnError(e) {
+      const img = e.target;
+      img.onerror = null;
+      img.src = PLACEHOLDER_IMG;
+    }
+
+    // ==== UI helpers ====
     function setActiveCategory(categoryName) {
       const buttons = $("#categoryBar button");
       buttons.each(function() {
-        const btnText = $(this).text().trim();
-        if (btnText === categoryName) {
-          $(this).addClass("active");
-          this.scrollIntoView({
-            behavior: "smooth",
-            block: "nearest",
-            inline: "center"
-          });
+        const text = $(this).data("cat");
+        if (text === categoryName) {
+          $(this).addClass("active").attr("aria-selected", "true");
+          this.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
         } else {
-          $(this).removeClass("active");
+          $(this).removeClass("active").attr("aria-selected", "false");
         }
       });
+      try { localStorage.setItem(LAST_CATEGORY_KEY, categoryName || ""); } catch(e){}
     }
 
-    // >>> ИЗМЕНЕНО <<<
-    // Логика, которая решает, показывать ли кнопку "Отправить жене"
-    // Показываем её только на вкладке "Хочу!" и только если список не пуст
     function updateShareBtnVisibility() {
       const isWantTabActive = !$("#wantSection").hasClass("hidden");
       if (isWantTabActive && wantList.length > 0) {
-        $("#shareBtnContainer").show();
+        $("#shareBtnContainer").fadeIn(120);
       } else {
-        $("#shareBtnContainer").hide();
+        $("#shareBtnContainer").fadeOut(120);
       }
     }
 
-    // Обновление статуса Empty State
     function updateEmptyState() {
       if (wantList.length === 0) {
         $("#wantGrid").hide();
@@ -445,141 +446,189 @@
         $("#wantGrid").show();
         $("#emptyState").hide();
       }
-      // Вызываем новую функцию, которая скрывает или показывает кнопку
       updateShareBtnVisibility();
     }
 
-    // Загрузка данных из JSON
-    function loadDishes() {
-      $.getJSON("dishes.json", function(data) {
-        dishes = data;
-        renderCategoryBar();
-        renderGroupedDishes();
-      }).fail(function() {
-        console.error("Не удалось загрузить файл dishes.json");
-        // Для демонстрации используем тестовые данные
-        dishes = [
-          {id: 1, name: "Стейк рибай", category: "Мясо", image: "/api/placeholder/400/400"},
-          {id: 2, name: "Карпаччо из говядины", category: "Мясо", image: "/api/placeholder/400/400"},
-          {id: 3, name: "Дорадо на гриле", category: "Рыба", image: "/api/placeholder/400/400"},
-          {id: 4, name: "Том ям с креветками", category: "Супы", image: "/api/placeholder/400/400"},
-          {id: 5, name: "Салат Цезарь", category: "Салаты", image: "/api/placeholder/400/400"},
-          {id: 6, name: "Тирамису", category: "Десерты", image: "/api/placeholder/400/400"},
-        ];
-        renderCategoryBar();
-        renderGroupedDishes();
-      });
+    // ==== Хранилище ====
+    function persistWant() {
+      try {
+        const ids = wantList.map(d => d.id);
+        localStorage.setItem(WANT_STORAGE_KEY, JSON.stringify(ids));
+      } catch(e){}
     }
 
-    // Отрисовка верхней панели категорий
+    function restoreWant() {
+      try {
+        const raw = localStorage.getItem(WANT_STORAGE_KEY);
+        if (!raw) return;
+        const ids = JSON.parse(raw);
+        wantList = dishes.filter(d => ids.includes(d.id));
+      } catch(e){}
+    }
+
+    // ==== Рендер верхней панели категорий ====
     function renderCategoryBar() {
-      const categories = [...new Set(dishes.map(d => d.category))];
+      const categories = [...new Set(dishes.map(d => d.category))].sort((a,b) => a.localeCompare(b, 'ru'));
       const bar = $("#categoryBar");
       bar.empty();
+
       categories.forEach(category => {
-        const button = $(`<button class="category-btn">${category}</button>`);
+        const button = $(`<button type="button" class="category-btn" role="tab" aria-selected="false"></button>`);
+        button.text(category);
+        button.attr("data-cat", category);
         button.on("click", function() {
           const barHeight = $("#categoryBar").outerHeight();
           const targetId = `#category-${CSS.escape(category.replace(/\s+/g, '_'))}`;
           const target = $(targetId);
           if (target.length) {
-            $("html, body").stop(true).animate({
-              scrollTop: target.offset().top - barHeight - 10
-            }, 300, function() {
+            $("html, body").stop(true).animate({ scrollTop: target.offset().top - barHeight - 10 }, 250, () => {
               setActiveCategory(category);
             });
           }
         });
         bar.append(button);
       });
+
+      try {
+        const last = localStorage.getItem(LAST_CATEGORY_KEY);
+        if (last) setActiveCategory(last);
+      } catch(e){}
     }
 
-    // Отрисовка блюд, сгруппированных по категориям
-    function renderGroupedDishes() {
-      const grouped = {};
-      dishes.forEach(dish => {
-        if (!grouped[dish.category]) {
-          grouped[dish.category] = [];
-        }
-        grouped[dish.category].push(dish);
-      });
-      const container = $("#dishesContainer");
-      container.empty();
-      for (const category in grouped) {
-        container.append(`<h4 id="category-${category.replace(/\s+/g, '_')}" class="mt-4">${category}</h4>`);
-        const rowDiv = $(`<div class="row row-cols-2 g-3"></div>`);
-        grouped[category].forEach(dish => {
-          const isAdded = wantList.some(w => w.id === dish.id);
-          const buttonHtml = isAdded
-            ? `<button class="btn w-100 remove-btn mt-auto" data-id="${dish.id}">Передумал</button>`
-            : `<button class="btn w-100 want-btn mt-auto" data-id="${dish.id}">Хочу!</button>`;
-          const card = $(`
-            <div class="col">
-              <div class="card h-100">
-                <img src="${dish.image}" loading="lazy" class="card-img-top" alt="${dish.name}">
-                <div class="card-body">
-                  <h5 class="card-title">${dish.name}</h5>
-                  ${buttonHtml}
-                </div>
-              </div>
-            </div>
-          `);
-          rowDiv.append(card);
-        });
-        container.append(rowDiv);
+    // ==== Тоггл выбора ====
+    function toggleDish(id) {
+      const exists = wantList.some(d => d.id === id);
+      if (exists) {
+        wantList = wantList.filter(d => d.id !== id);
+      } else {
+        const dish = dishes.find(d => d.id === id);
+        if (dish) wantList.push(dish);
       }
-      $("#menuCount").text(dishes.length);
-    }
-
-    // Отрисовка раздела "Хочу!"
-    function renderWant() {
-      const grid = $("#wantGrid");
-      grid.empty();
-      wantList.forEach(dish => {
-        const card = $(`
-          <div class="col">
-            <div class="card h-100">
-              <img src="${dish.image}" loading="lazy" class="card-img-top" alt="${dish.name}">
-              <div class="card-body">
-                <h5 class="card-title">${dish.name}</h5>
-                <button class="btn w-100 remove-btn mt-auto" data-id="${dish.id}">
-                  Передумал
-                </button>
-              </div>
-            </div>
-          </div>
-        `);
-        grid.append(card);
-      });
-      $("#wantCount").text(wantList.length);
-      updateEmptyState();
-    }
-
-    // Удаление блюда из списка "Хочу!"
-    function removeFromWant(id) {
-      wantList = wantList.filter(d => d.id !== id);
       renderWant();
       renderGroupedDishes();
     }
 
-    // Отправка списка через Web Share API (пример)
+    // ==== Рендер блюд, сгруппированных по категориям ====
+    function cardMarkup(dish, isAdded) {
+      return `
+        <div class="col fade-in-up">
+          <div class="card h-100 ${isAdded ? 'selected' : ''}">
+            <div class="media-wrapper">
+              <img src="${dish.image}" loading="lazy" class="card-img-top" alt="${dish.name}" onerror="imgOnError(event)">
+              <button class="img-toggle ${isAdded ? 'active' : ''}" data-id="${dish.id}" aria-pressed="${isAdded}" aria-label="${isAdded ? 'Убрать из списка' : 'Добавить в список'}" type="button">
+                <!-- плюс -->
+                <svg class="icon-plus" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M12 5v14M5 12h14"></path>
+                </svg>
+                <!-- галка -->
+                <svg class="icon-check" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M20 6L9 17l-5-5"></path>
+                </svg>
+              </button>
+              <div class="img-label">
+                <span class="dish-name">${dish.name}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    function renderGroupedDishes() {
+      const grouped = {};
+      dishes.forEach(dish => { (grouped[dish.category] ||= []).push(dish); });
+
+      const container = $("#dishesContainer");
+      container.empty();
+
+      Object.keys(grouped)
+        .sort((a,b) => a.localeCompare(b, 'ru'))
+        .forEach(category => {
+          container.append(`<h4 id="category-${category.replace(/\s+/g, '_')}" class="mt-4">${category}</h4>`);
+          const row = $(`<div class="row row-cols-2 g-3"></div>`);
+          grouped[category].forEach(dish => {
+            const isAdded = wantList.some(w => w.id === dish.id);
+            row.append(cardMarkup(dish, isAdded));
+          });
+          container.append(row);
+        });
+
+      $("#menuCount").text(dishes.length);
+    }
+
+    // ==== Рендер раздела «Хочу!» ====
+    function renderWant() {
+      const grid = $("#wantGrid");
+      grid.empty();
+
+      wantList.forEach(dish => {
+        const isAdded = true;
+        grid.append(cardMarkup(dish, isAdded));
+      });
+
+      $("#wantCount").text(wantList.length);
+      updateEmptyState();
+      persistWant();
+    }
+
+    // ==== Поделиться списком ====
     function shareWantedList() {
       if (wantList.length === 0) {
         alert("В списке пока ничего нет.");
         return;
       }
-      const listText = "Мой список блюд:\n" + wantList.map(d => "- " + d.name).join("\n");
+      const title = "Заказ по дома-меню";
+      const listText = wantList.map((d, i) => `${i+1}. ${d.name}`).join("\n");
+      const text = `Мой список блюд:\n${listText}`;
+
       if (navigator.share) {
-        navigator.share({ text: listText }).catch(err => {
-          console.error("Ошибка при использовании Web Share API:", err);
-        });
-      } else {
-        alert("Ваш браузер не поддерживает Web Share API. Вот список:\n\n" + listText);
+        navigator.share({ title, text }).catch(err => console.error("Web Share API:", err));
+        return;
+      }
+      if (tg && tg.showAlert) {
+        tg.showAlert(text);
+        return;
+      }
+      alert(text);
+    }
+
+    // ==== Загрузка данных ====
+    function loadDishes() {
+      $.getJSON("dishes.json", function(data) {
+        dishes = data || [];
+        restoreWant();
+        renderCategoryBar();
+        renderGroupedDishes();
+        renderWant();
+      }).fail(function() {
+        console.error("Не удалось загрузить файл dishes.json, использую тестовые данные.");
+        dishes = [
+          {id: 1, name: "Стейк рибай", category: "Мясо", image: "images/steak_ribeye.jpg"},
+          {id: 2, name: "Карпаччо из говядины", category: "Мясо", image: "images/carpaccio_beef.jpg"},
+          {id: 3, name: "Дорадо на гриле", category: "Рыба", image: "images/dorado_grill.jpg"},
+          {id: 4, name: "Том ям с креветками", category: "Супы", image: "images/tom_yum.jpg"},
+          {id: 5, name: "Салат Цезарь", category: "Салаты", image: "images/caesar.jpg"},
+          {id: 6, name: "Тирамису", category: "Десерты", image: "images/tiramisu.jpg"},
+        ];
+        renderCategoryBar();
+        renderGroupedDishes();
+        renderWant();
+      });
+    }
+
+    // ==== Подсветка активной категории при скролле ====
+    function throttle(fn, wait) {
+      let last = 0;
+      return function(...args) {
+        const now = Date.now();
+        if (now - last >= wait) {
+          last = now;
+          fn.apply(this, args);
+        }
       }
     }
 
-    // Обработчик скролла для подсветки активной категории (только для страницы «Меню»)
-    $(window).on("scroll", function() {
+    const onScroll = throttle(function() {
       if (!$("#menuSection").is(":visible")) return;
       const scrollPos = $(document).scrollTop();
       const barHeight = $("#categoryBar").outerHeight();
@@ -589,65 +638,60 @@
       if (!currentSection.length) return;
       const activeCategory = currentSection.text().trim();
       setActiveCategory(activeCategory);
-    });
+    }, 100);
 
-    // Инициализация и обработчики переключения между разделами
+    // ==== Инициализация ====
     $(document).ready(function() {
       loadDishes();
       updateEmptyState();
 
-      $(document).on("click", ".want-btn", function() {
+      // Делегирование: клик по круглой кнопке на картинке
+      $(document).on("click", ".img-toggle", function() {
         const id = parseInt($(this).data("id"));
-        const dish = dishes.find(d => d.id === id);
-        if (dish && !wantList.some(d => d.id === id)) {
-          wantList.push(dish);
+        toggleDish(id);
+      });
+
+      $("#clearBtn").on("click", function() {
+        if (wantList.length === 0) return;
+        if (confirm("Очистить весь список «Хочу!»?")) {
+          wantList = [];
           renderWant();
           renderGroupedDishes();
         }
       });
 
-      $(document).on("click", ".remove-btn", function() {
-        const id = parseInt($(this).data("id"));
-        removeFromWant(id);
-      });
+      $("#shareBtn").on("click", shareWantedList);
 
-      $("#clearBtn").click(function() {
-        wantList = [];
-        renderWant();
-        renderGroupedDishes();
-      });
-
-      $("#shareBtn").click(function() {
-        shareWantedList();
-      });
-      
-      $("#backToMenuBtn").click(function() {
+      $("#backToMenuBtn").on("click", function() {
         $("#menuSection").removeClass("hidden");
         $("#wantSection").addClass("hidden");
-        $("#menuTab").addClass("active");
-        $("#wantTab").removeClass("active");
+        $("#menuTab").addClass("active").attr("aria-selected", "true");
+        $("#wantTab").removeClass("active").attr("aria-selected", "false");
         $("#categoryBar").show();
-        updateShareBtnVisibility(); // при возврате на "Меню" скрываем кнопку
+        updateShareBtnVisibility();
       });
 
-      // Переключение между разделами "Меню" и "Хочу!"
-      $("#menuTab").click(function() {
+      // Переключение табов
+      $("#menuTab").on("click", function() {
         $("#menuSection").removeClass("hidden");
         $("#wantSection").addClass("hidden");
-        $(this).addClass("active");
-        $("#wantTab").removeClass("active");
+        $(this).addClass("active").attr("aria-selected", "true");
+        $("#wantTab").removeClass("active").attr("aria-selected", "false");
         $("#categoryBar").show();
-        updateShareBtnVisibility(); // скрыть кнопку "Отправить жене"
+        updateShareBtnVisibility();
       });
 
-      $("#wantTab").click(function() {
+      $("#wantTab").on("click", function() {
         $("#menuSection").addClass("hidden");
         $("#wantSection").removeClass("hidden");
-        $(this).addClass("active");
-        $("#menuTab").removeClass("active");
+        $(this).addClass("active").attr("aria-selected", "true");
+        $("#menuTab").removeClass("active").attr("aria-selected", "false");
         $("#categoryBar").hide();
-        updateShareBtnVisibility(); // показать кнопку, если список не пуст
+        updateShareBtnVisibility();
       });
+
+      // Скролл
+      $(window).on("scroll", onScroll);
     });
   </script>
 </body>
